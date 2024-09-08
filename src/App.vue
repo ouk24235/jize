@@ -121,7 +121,9 @@ onMounted(() => {
   console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
 
   // 设置移动端初始状态
-  store.mobileOpenState = true;
+  if (window.innerWidth < 721) {
+    store.mobileOpenState = true;
+  }
 });
 
 onBeforeUnmount(() => {
