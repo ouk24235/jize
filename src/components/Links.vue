@@ -48,6 +48,7 @@ import { mainStore } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Mousewheel } from "swiper/modules";
 import siteLinks from "@/assets/siteLinks.json";
+import { Telegram } from "@icon-park/vue-next";
 
 const store = mainStore();
 
@@ -70,6 +71,7 @@ const siteIcon = {
   Book,
   Fire,
   LaptopCode,
+  Telegram,
 };
 
 // 链接跳转

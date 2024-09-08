@@ -1,8 +1,8 @@
 [
   {
-    "icon": "Blog",
-    "name": "博客",
-    "link": "https://qang8.xyz/"
+    "icon": "Fire",
+    "name": "赚钱项目",
+    "link": "https://qang8.xyz/huodon.html"
   },
   {
     "icon": "Cloud",
@@ -25,9 +25,9 @@
     "link": "https://qang8.xyz/"
   },
   {
-    "icon": "Fire",
-    "name": "今日热榜",
-    "link": "https://qang8.xyz/"
+    "icon": "Telegram",
+    "name": "联系我们",
+    "link": "https://qang8.xyz/kefu.html"
   },
   {
     "icon": "LaptopCode",
