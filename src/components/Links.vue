@@ -30,7 +30,12 @@
               <Icon size="26">
                 <component :is="siteIcon[item.icon]" />
               </Icon>
-              <span class="name text-hidden">{{ item.name }}</span>
+              <span 
+                class="name text-hidden" 
+                :style="{ color: item.name === '赚钱项目' || item.name === '联系我们' ? 'red' : 'inherit' }"
+              >
+                {{ item.name }}
+              </span>
             </div>
           </el-col>
         </el-row>
