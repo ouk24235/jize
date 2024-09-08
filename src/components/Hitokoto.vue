@@ -114,7 +114,8 @@ onMounted(() => {
       text-overflow: ellipsis;
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 3; /* 仅支持 WebKit 浏览器 */
+      line-clamp: 3; /* 标准属性，未来可能会被支持 */
       -webkit-box-orient: vertical;
     }
     .from {
