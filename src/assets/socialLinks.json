@@ -1,33 +1,9 @@
 [
   {
-    "name": "Github",
-    "icon": "/images/icon/github.png",
-    "tip": "去 Github 看看",
-    "url": "https://qang8.xyz/"
-  },
-  {
-    "name": "BiliBili",
-    "icon": "/images/icon/bilibili.png",
-    "tip": "(゜-゜)つロ 干杯 ~",
-    "url": "https://qang8.xyz/"
-  },
-  {
     "name": "QQ",
     "icon": "/images/icon/qq.png",
     "tip": "有什么事吗",
     "url": "https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=m1b7vavmowOko6krIaje_FtszjIzycsP&authKey=PG8IE%2F2Od9BKuRbDg1yI8uAUj%2Fv9dUfHa0DPoGk4xfQPiGSD%2F4tH7mcy6SHb2AlX&noverify=0&group_code=3843778455"
-  },
-  {
-    "name": "Email",
-    "icon": "/images/icon/email.png",
-    "tip": "来封 Email ~",
-    "url": "https://qang8.xyz/"
-  },
-  {
-    "name": "Twitter",
-    "icon": "/images/icon/twitter.png",
-    "tip": "你懂的 ~",
-    "url": "https://qang8.xyz/"
   },
   {
     "name": "Telegram",

@@ -1,33 +1,33 @@
 [
   {
-    "icon": "Fire",
+    "icon": "zhuanqian",
     "name": "赚米项目",
     "link": "https://cocoa.qang8.xyz/2/zhuanqian/index.html"
   },
   {
-    "icon": "Cloud",
-    "name": "免费资源发布",
+    "icon": "yunduan",
+    "name": "免费资源",
     "link": "https://cocoa.qang8.xyz/2/ziyuan/index.html"
   },
   {
-    "icon": "CompactDisc",
+    "icon": "gouwuche",
     "name": "店铺正在搭建",
     "link": "https://qang8.xyz/"
   },
   {
     "icon": "Compass",
-    "name": "Telelgram下载",
+    "name": "Telegram下载",  
     "link": "https://cocoa.qang8.xyz/4/index.html"
   },
   {
-    "icon": "Book",
-    "name": "游戏科技",
-    "link": "https://qang8.xyz/"
+    "icon": "TGpingdao",
+    "name": "Telegram频道",
+    "link": "https://t.me/yyyp8888"
   },
   {
-    "icon": "Telegram",
+    "icon": "lxwm",
     "name": "联系我们",
-    "link": "https://cocoa.qang8.xyz/4/guanli.html#"
+    "link": "#"
   },
   {
     "icon": "LaptopCode",

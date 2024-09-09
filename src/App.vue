@@ -12,8 +12,8 @@
           <MainRight v-show="!store.boxOpenState" />
           <Box v-show="store.boxOpenState" />
         </section>
-        <section class="more" v-show="store.setOpenState" @click="store.setOpenState = false">
-          <MoreSet />
+        <section class="more" v-if="store.setOpenState" @click="closeSettings">
+          <MoreSet @close="closeSettings" />
         </section>
       </div>
       <!-- 移动端菜单按钮 -->
@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+import { nextTick, watch, onMounted, onBeforeUnmount } from 'vue';
 import { helloInit, checkDays } from "@/utils/getTime.js";
 import { HamburgerButton, CloseSmall } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
@@ -49,6 +50,10 @@ import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
 
 const store = mainStore();
+
+const closeSettings = () => {
+  store.setOpenState = false;
+};
 
 // 页面宽度
 const getWidth = () => {

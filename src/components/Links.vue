@@ -32,7 +32,7 @@
               </Icon>
               <span 
                 class="name text-hidden" 
-                :style="{ color: item.name === '赚钱项目' || item.name === '联系我们' ? 'red' : 'inherit' }"
+                :style="{ color: item.name === '赚米项目' || item.name === '联系我们' ? 'red' : 'inherit' }"
               >
                 {{ item.name }}
               </span>
@@ -42,6 +42,7 @@
       </SwiperSlide>
       <div class="swiper-pagination" />
     </Swiper>
+    <Sett v-if="showSetComponent" @close="showSetComponent = false" /> <!-- 替换为Sett组件 -->
   </div>
 </template>
 
@@ -54,8 +55,15 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Mousewheel } from "swiper/modules";
 import siteLinks from "@/assets/siteLinks.json";
 import { Telegram } from "@icon-park/vue-next";
+import lxwm from "@/components/lxwm.vue";
+import Sett from "@/components/Sett.vue"; // 引入Sett.vue
+import TGpingdao from "@/components/TGpingdao.vue";
+import gouwuche from "@/components/gouwuche.vue";
+import zhuanqian from "@/components/zhuanqian.vue";
+import yunduan from "@/components/yunduan.vue";
 
 const store = mainStore();
+const showSetComponent = ref(false); // 控制Set组件显示
 
 // 计算网站链接
 const siteLinksList = computed(() => {
@@ -76,12 +84,19 @@ const siteIcon = {
   Book,
   Fire,
   LaptopCode,
-  Telegram,
+  TGpingdao,
+  gouwuche,
+  zhuanqian,
+  yunduan,
+  lxwm,
+  Sett, // 添加Sett.vue
 };
 
 // 链接跳转
 const jumpLink = (data) => {
-  if (data.name === "音乐" && store.musicClick) {
+  if (data.name === "联系我们") {
+    showSetComponent.value = true; // 显示Sett组件
+  } else if (data.name === "音乐" && store.musicClick) {
     if (typeof $openList === "function") $openList();
   } else {
     window.open(data.link, "_blank");
