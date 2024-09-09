@@ -11,15 +11,15 @@
         <div class="content">
           <div class="text-content">
             <h2 class="top-title">国内联系方式</h2>
-            <p><a href="https://example.com/qq" target="_blank">QQ</a></p>
-            <p><a href="https://example.com/bat" target="_blank">蝙蝠ID:</a></p>
+            <p><a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=m1b7vavmowOko6krIaje_FtszjIzycsP&authKey=PG8IE%2F2Od9BKuRbDg1yI8uAUj%2Fv9dUfHa0DPoGk4xfQPiGSD%2F4tH7mcy6SHb2AlX&noverify=0&group_code=3843778455" target="_blank">QQ:3843778455</a></p>
+            <p><a target="_blank">蝙蝠ID:34684660</a></p>
             <h2>国外联系方式</h2>
             <p><a href="https://t.me/qang8" target="_blank">Telegram: @qang8</a></p>
             <p><a href="https://discord.com/users/qang8" target="_blank">Discord: qang8</a></p>
           </div>
         </div>
       </div>
-    </div>
+    </div>  
 </template>
 
 <script setup>
