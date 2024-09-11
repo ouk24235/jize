@@ -13,6 +13,7 @@ export const mainStore = defineStore("main", {
       musicOpenState: false, // 音乐面板开启状态
       backgroundShow: false, // 壁纸展示状态
       boxOpenState: false, // 盒子开启状态
+      boxxOpenState: false, // Boxx 组件开启状态
       mobileOpenState: false, // 移动端开启状态
       mobileFuncState: false, // 移动端功能区开启状态
       setOpenState: false, // 设置页面开启状态
@@ -73,6 +74,14 @@ export const mainStore = defineStore("main", {
     // 更改壁纸加载状态
     setImgLoadStatus(value) {
       this.imgLoadStatus = value;
+    },
+    // 更改盒子开启状态
+    setBoxOpenState(value) {
+      this.boxOpenState = value;
+    },
+    // 更改 Boxx 组件开启状态
+    setBoxxOpenState(value) {
+      this.boxxOpenState = value;
     },
   },
   persist: {

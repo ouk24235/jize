@@ -31,5 +31,8 @@ declare module '@vue/runtime-core' {
     SocialLinks: typeof import('./src/components/SocialLinks.vue')['default']
     TimeCapsule: typeof import('./src/components/TimeCapsule.vue')['default']
     Weather: typeof import('./src/components/Weather.vue')['default']
+    indexx: typeof import('./src/views/Boxx/Boxx.vue')['default']  // 添加 Boxx 组件
+    TimeCapsulee: typeof import('./src/components/xinxi.vue')['default']
+    xinxii: typeof import('./src/components/xinxii.vue')['default']
   }
 }

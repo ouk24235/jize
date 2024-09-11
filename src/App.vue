@@ -9,7 +9,7 @@
       <div class="container" v-show="!store.backgroundShow">
         <section class="all" v-show="!store.setOpenState">
           <MainLeft />
-          <MainRight v-show="!store.boxOpenState" />
+          <MainRight v-show="!store.boxOpenState && !store.boxxOpenState" />
           <Box v-show="store.boxOpenState" />
         </section>
         <section class="more" v-if="store.setOpenState" @click="closeSettings">
@@ -31,10 +31,12 @@
       </Transition>
     </main>
   </Transition>
+  <!-- 动态加载 Boxx 组件 -->
+  <component :is="currentComponent" v-if="currentComponent" />
 </template>
 
 <script setup>
-import { nextTick, watch, onMounted, onBeforeUnmount } from 'vue';
+import { nextTick, watch, onMounted, onBeforeUnmount, ref } from 'vue';
 import { helloInit, checkDays } from "@/utils/getTime.js";
 import { HamburgerButton, CloseSmall } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
@@ -50,6 +52,7 @@ import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
 
 const store = mainStore();
+const currentComponent = ref(null);
 
 const closeSettings = () => {
   store.setOpenState = false;
@@ -76,6 +79,7 @@ watch(
   (value) => {
     if (value < 721) {
       store.boxOpenState = false;
+      store.boxxOpenState = false;
       store.setOpenState = false;
     }
   },
@@ -134,8 +138,16 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("resize", getWidth);
 });
-</script>
 
+// 处理链接点击事件
+const handleClick = (link) => {
+  if (link.name === '店铺正在搭建') {
+    currentComponent.value = Boxx;
+  } else {
+    window.location.href = link.link;
+  }
+};
+</script>
 <style lang="scss" scoped>
 #main {
   position: absolute;
@@ -262,3 +274,4 @@ onBeforeUnmount(() => {
   }
 }
 </style>
+

@@ -32,7 +32,7 @@
               </Icon>
               <span 
                 class="name text-hidden" 
-                :style="{ color: item.name === '赚米项目' || item.name === '联系我们' ? 'red' : 'inherit' }"
+                :style="{ color: item.name === '赚米项目' || item.name === '联系客服' ? 'red' : 'inherit' }"
               >
                 {{ item.name }}
               </span>
@@ -43,10 +43,12 @@
       <div class="swiper-pagination" />
     </Swiper>
     <Sett v-if="showSetComponent" @close="showSetComponent = false" /> <!-- 替换为Sett组件 -->
+    <component :is="currentComponent" v-if="currentComponent" ref="dynamicComponentRef" /> <!-- 动态加载组件 -->
   </div>
 </template>
 
 <script setup>
+import { ref, computed, onMounted, nextTick } from 'vue';
 import { Icon } from "@vicons/utils";
 // 可前往 https://www.xicons.org 自行挑选并在此处引入
 import { Link, Blog, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
@@ -61,9 +63,14 @@ import TGpingdao from "@/components/TGpingdao.vue";
 import gouwuche from "@/components/gouwuche.vue";
 import zhuanqian from "@/components/zhuanqian.vue";
 import yunduan from "@/components/yunduan.vue";
+import Boxx from '@/views/Boxx/Boxx.vue'; // 引入 Boxx 组件
+import xiangmu from '@/views/xiangmu/xiangmu.vue'; // 引入 xiangmu 组件
+import YourComponent from '@/components/YourComponent.vue'; // 引入 YourComponent 组件
 
 const store = mainStore();
 const showSetComponent = ref(false); // 控制Set组件显示
+const currentComponent = ref(null); // 控制动态组件显示
+const dynamicComponentRef = ref(null); // 引用动态组件实例
 
 // 计算网站链接
 const siteLinksList = computed(() => {
@@ -89,13 +96,30 @@ const siteIcon = {
   zhuanqian,
   yunduan,
   lxwm,
+  Boxx,
   Sett, // 添加Sett.vue
+  YourComponent, // 添加 YourComponent
 };
 
 // 链接跳转
 const jumpLink = (data) => {
-  if (data.name === "联系我们") {
+  if (data.name === "联系客服") {
     showSetComponent.value = true; // 显示Sett组件
+  } else if (data.name === "店铺正在搭建") {
+    currentComponent.value = Boxx; // 显示Boxx组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 Boxx 组件的 show 方法
+    });
+  } else if (data.name === "赚米项目") {
+    currentComponent.value = xiangmu; // 显示 xiangmu 组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
+    });
+  } else if (data.name === "YourComponentName") { // 替换为 YourComponent 的实际名称
+    currentComponent.value = YourComponent; // 显示 YourComponent 组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 YourComponent 组件的 show 方法
+    });
   } else if (data.name === "音乐" && store.musicClick) {
     if (typeof $openList === "function") $openList();
   } else {

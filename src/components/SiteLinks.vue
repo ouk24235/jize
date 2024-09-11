@@ -12,6 +12,7 @@
 <script>
 import siteLinks from '@/assets/siteLinks.json';
 import Set from '@/components/Set.vue';
+import Boxx from '@/views/Boxx/Boxx.vue';
 
 export default {
   data() {
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     handleClick(link) {
-      if (link.name === '联系我们') {
+      if (link.name === '联系我们' || link.name === '店铺正在搭建') {
         this.showSet = true;
       } else {
         window.location.href = link.link;
