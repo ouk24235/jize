@@ -56,7 +56,7 @@
             <LI>杜绝涉黑涉恶人员，防止卷款跑路。</LI></p>
           <h3>👦‍联系我们</h3>
           <p>该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
-          <p>大号被冻结加这个QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></p>
+          <p>大号被冻结加这个QQ；<span @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 （点击复制）</span></p>
           <p>有意向请赶快联系我吧，一单一结</p>
           <p>最新修订时间：<span style="color: red;">2024年9月12日</span></p>
           <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
