@@ -14,8 +14,8 @@
         
         <h2> ASSIW团队：诚信出盗来的U</h2>
         <div class="main-details">
-            <p>唯一对接人：Telegram: <a href="https://t.me/qang8" target="_blank">@qang8（点击跳转）</a></p>
-            <p>风控问题联系： QQ: <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=m1b7vavmowOko6krIaje_FtszjIzycsP&authKey=PG8IE%2F2Od9BKuRbDg1yI8uAUj%2Fv9dUfHa0DPoGk4xfQPiGSD%2F4tH7mcy6SHb2AlX&noverify=0&group_code=3843778455" target="_blank">3843778455（点击跳转）</a></p>
+            <p>唯一对接人：Telegram: <a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
+            <p>风控问题联系： QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></p>
             <p>同台交易支持区域： 菲律宾、迪拜、香港等地区支持同台交易，其他地区目前只支持线上。</p>
             <p>简单介绍： 1白U约等于7人民币，你可以拿白U在我们这里兑换黑U，具体比例以及来源用途请看介绍。</p>
 
@@ -108,7 +108,7 @@
                 
                 <h3>🫱➡️如何进行测试：</h3>
                 
-                    <li>联系对接人：通过Telegram联系唯一指定的对接客服号 <a href="https://t.me/qang8" target="_blank">@QANG8（点击跳转）</a>，向客服说明你想进行小额测试交易。</li>
+                    <li>联系对接人：通过Telegram联系唯一指定的对接客服号 <a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a>，向客服说明你想进行小额测试交易。</li>
                     <li>确认交易金额：与客服确认你想测试的金额，通常推荐100U、200U、500U等小额额度。</li>
                     <li>担保与安全性：客户可以自行邀请担保来参与测试交易。我们支持多种担保方式，包括常见的第三方平台担保，确保交易过程的安全性。</li>
                     <li>支付与收款：在确认测试金额后，按照客服指示进行支付。支付成功后，你将在短时间内收到相应的黑U到你的钱包地址。我们会确保整个流程的迅速与透明。</li>
@@ -286,8 +286,27 @@ const goBack = () => {
   emit('close'); // 触发关闭事件
 };
 
+
 // 公开 show 方法
 defineExpose({ show: () => { isVisible.value = true; } });
+
+// 新增方法用于复制QQ号
+const copyQQ = (qq) => {
+  navigator.clipboard.writeText(qq).then(() => {
+    ElMessage({
+      message: `QQ号已复制：${qq}`,
+      type: 'success',
+      duration: 3000,
+    });
+  }).catch(err => {
+    ElMessage({
+      message: '复制失败，请重试',
+      type: 'error',
+      duration: 3000,
+    });
+    console.error('复制失败：', err);
+  });
+};
 </script>
 
 <style lang="scss" scoped>
@@ -303,6 +322,7 @@ defineExpose({ show: () => { isVisible.value = true; } });
   align-items: center;
   z-index: 1000;
 }
+
 
 .set {
   position: relative;

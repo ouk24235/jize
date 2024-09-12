@@ -55,8 +55,8 @@
           <p>丶目前只接受高信用用户的订单，防止扯皮。客户年龄区间在20-60之间，能熟练操作手机的。
             <LI>杜绝涉黑涉恶人员，防止卷款跑路。</LI></p>
           <h3>👦‍联系我们</h3>
-          <p>该项目负责人Telegram；<a href="https://t.me/qang8" target="_blank">@qang8（点击跳转）</a></p>
-          <p>大号被冻结加这个QQ；<a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=m1b7vavmowOko6krIaje_FtszjIzycsP&authKey=PG8IE%2F2Od9BKuRbDg1yI8uAUj%2Fv9dUfHa0DPoGk4xfQPiGSD%2F4tH7mcy6SHb2AlX&noverify=0&group_code=3843778455" target="_blank">3843778455（点击跳转）</a></p>
+          <p>该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
+          <p>大号被冻结加这个QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></p>
           <p>有意向请赶快联系我吧，一单一结</p>
           <p>最新修订时间：<span style="color: red;">2024年9月12日</span></p>
           <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
@@ -86,6 +86,24 @@ const goBack = () => {
 
 // 公开 show 方法
 defineExpose({ show: () => { isVisible.value = true; } });
+
+// 新增方法用于复制QQ号
+const copyQQ = (qq) => {
+  navigator.clipboard.writeText(qq).then(() => {
+    ElMessage({
+      message: `QQ号已复制：${qq}`,
+      type: 'success',
+      duration: 3000,
+    });
+  }).catch(err => {
+    ElMessage({
+      message: '复制失败，请重试',
+      type: 'error',
+      duration: 3000,
+    });
+    console.error('复制失败：', err);
+  });
+};
 </script>
 
 <style lang="scss" scoped>

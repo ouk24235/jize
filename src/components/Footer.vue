@@ -23,7 +23,7 @@
         <!-- 站点备案 -->
         <span>
           &amp;
-          <a v-if="siteIcp" href="https://t.me/qang8" target="_blank">
+          <a v-if="siteIcp" href="https://t.me/Assiw8" target="_blank">
             {{ siteIcp }}
           </a>
         </span>
@@ -59,7 +59,7 @@ const siteIcp = ref(import.meta.env.VITE_SITE_ICP);
 const siteAuthor = ref(import.meta.env.VITE_SITE_AUTHOR);
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
-  if (!url) return "https://www.qang8.xyz";
+  if (!url) return "https://www.assiw.xyz";
   // 判断协议前缀
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     return "//" + url;
