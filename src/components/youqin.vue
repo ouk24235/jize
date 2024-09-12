@@ -11,9 +11,9 @@
 
         <!-- 新增内容 -->
         <div class="more-content">
-          <h2 class="top-title">全网最牛逼的辅助和账号购买地址</h2> <!-- 置顶标题 -->
+          <h2 class="top-title">友情链接--记住 ASSIW.XYZ 防止走丢</h2> <!-- 置顶标题 -->
           <div class="link-all">
-            <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="jumpLink(link.link)">
+            <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)">
               <i :class="link.icon"></i>
               <span class="name">{{ link.name }}</span>
               <div class="description">{{ link.description }}</div> <!-- 新增介绍 -->
@@ -28,9 +28,14 @@
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
 
+import bizhiziyuan from '@/components/bizhiziyuan.vue'; // 引入 .vue 文件
+
+
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
 const currentComponent = ref(null);
+
+
 
 const close = () => {
   isVisible.value = false;
@@ -47,24 +52,67 @@ const show = () => {
 defineExpose({ show });
 
 // 定义 JSON 数据
-const xinxiLinks = ref([
+const youqin = ref([
   {
-    name: "西瓜24H自动发卡网",
+    name: "橘子资源网",
     icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://xgnb.online/",
+    link: "https://www.juzia.cn/",
     description: "（强烈推荐）" // 新增介绍
   },
   {
-    name: "邮箱账户类别-自营",
+    name: "小众技术工具库",
     icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://faka.assiw.xyz/",
+    link: "https://www.xiaozhongjishu.com/",
     description: "（强烈推荐）" // 新增介绍
   },
+  {
+    name: "资源库",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://zyku.me/",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "黑木耳资源站",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://heimuer.tv/",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "咸鱼单机游戏下载",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://www.xianyudanji.net/",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "Z-Library书籍资源",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://zh.singlelogin.re/",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "看漫画-（拷贝漫画",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://www.mangacopy.com/",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "壁纸资源地址",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "bizi",
+    description: "（强烈推荐）" // 新增介绍
+  },
+  
+  
 ]);
 
 // 链接跳转
-const jumpLink = (url) => {
-  window.open(url, "_blank");
+const loadComponent = (link) => {
+  isVisible.value = false; // 隐藏当前页面
+  if (link === '壁纸资源地址') {
+    currentComponent.value = bizhiziyuan;
+  } else if (link === 'bizi') {
+    currentComponent.value = bizhiziyuan;
+  }
 };
 </script>
 

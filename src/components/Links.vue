@@ -33,7 +33,7 @@
                 </Icon>
                 <span 
                   class="name text-hidden" 
-                  :style="{ color: item.name === '赚米项目' || item.name === '联系客服' ? 'red' : 'inherit' }"
+                  :style="{ color: item.name === '赚米项目' ||item.name === '友情链接' || item.name === '联系客服' ? 'red' : 'inherit' }"
                 >
                   {{ item.name }}
                 </span>
@@ -71,6 +71,7 @@ import Boxx from '@/views/Boxx/Boxx.vue'; // 引入 Boxx 组件
 import xiangmu from '@/views/xiangmu/xiangmu.vue'; // 引入 xiangmu 组件
 import YourComponent from '@/components/YourComponent.vue'; // 引入 YourComponent 组件
 import xinxiLinks from '@/components/xinxiLinks.vue';
+import youqin from '@/components/youqin.vue'; // 引入 xiangmu 组件
 
 const store = mainStore();
 const showSetComponent = ref(false); // 控制Set组件显示
@@ -111,13 +112,18 @@ const siteIcon = {
 const jumpLink = (data) => {
   if (data.name === "联系客服") {
     showSetComponent.value = true; // 显示Sett组件
-  } else if (data.name === "游戏科技卡网") {
+  } else if (data.name === "合作商店铺") {
     currentComponent.value = xinxiLinks; // 显示Boxx组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 Boxx 组件的 show 方法
     });
   } else if (data.name === "赚米项目") {
     currentComponent.value = xiangmu; // 显示 xiangmu 组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
+    });
+  } else if (data.name === "友情链接") {
+    currentComponent.value = youqin; // 显示 xiangmu 组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });

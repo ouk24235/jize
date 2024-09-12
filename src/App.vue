@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
 
 // 处理链接点击事件
 const handleClick = (link) => {
-  if (link.name === '游戏科技卡网') {
+  if (link.name === '合作商店铺') {
     currentComponent.value = Boxx;
   } else {
     window.location.href = link.link;
