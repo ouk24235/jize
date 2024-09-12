@@ -27,15 +27,19 @@
               :style="index < 3 ? 'margin-bottom: 20px' : null"
               @click="jumpLink(item)"
             >
-              <Icon size="26">
-                <component :is="siteIcon[item.icon]" />
-              </Icon>
-              <span 
-                class="name text-hidden" 
-                :style="{ color: item.name === '赚米项目' || item.name === '联系客服' ? 'red' : 'inherit' }"
-              >
-                {{ item.name }}
-              </span>
+              <div class="icon-and-name">
+                <Icon size="26">
+                  <component :is="siteIcon[item.icon]" />
+                </Icon>
+                <span 
+                  class="name text-hidden" 
+                  :style="{ color: item.name === '赚米项目' || item.name === '联系客服' ? 'red' : 'inherit' }"
+                >
+                  {{ item.name }}
+                </span>
+              </div>
+              <!-- 添加介绍 -->
+              <div v-if="item.description" class="description">{{ item.description }}</div>
             </div>
           </el-col>
         </el-row>
@@ -66,6 +70,7 @@ import yunduan from "@/components/yunduan.vue";
 import Boxx from '@/views/Boxx/Boxx.vue'; // 引入 Boxx 组件
 import xiangmu from '@/views/xiangmu/xiangmu.vue'; // 引入 xiangmu 组件
 import YourComponent from '@/components/YourComponent.vue'; // 引入 YourComponent 组件
+import xinxiLinks from '@/components/xinxiLinks.vue';
 
 const store = mainStore();
 const showSetComponent = ref(false); // 控制Set组件显示
@@ -99,14 +104,15 @@ const siteIcon = {
   Boxx,
   Sett, // 添加Sett.vue
   YourComponent, // 添加 YourComponent
+  xinxiLinks,
 };
 
 // 链接跳转
 const jumpLink = (data) => {
   if (data.name === "联系客服") {
     showSetComponent.value = true; // 显示Sett组件
-  } else if (data.name === "店铺正在搭建") {
-    currentComponent.value = Boxx; // 显示Boxx组件
+  } else if (data.name === "游戏科技卡网") {
+    currentComponent.value = xinxiLinks; // 显示Boxx组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 Boxx 组件的 show 方法
     });
@@ -184,10 +190,11 @@ onMounted(() => {
       width: 100%;
       display: flex;
       align-items: center;
-      flex-direction: row;
+      flex-direction: column; /* 垂直方向排列 */
       justify-content: center;
-      padding: 0 10px;
+      padding: 10px; /* 内边距 */
       animation: fade 0.5s;
+      text-align: center; /* 内容居中对齐 */
 
       &:hover {
         transform: scale(1.02);
@@ -199,10 +206,25 @@ onMounted(() => {
         transform: scale(1);
       }
 
+      .icon-and-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px; /* 图标和名称下方的间距 */
+      }
+
       .name {
         font-size: 1.1rem;
         margin-left: 8px;
       }
+
+      .description {
+        font-size: 0.9rem; /* 介绍字体大小 */
+        margin-top: 5px; /* 介绍上边距 */
+        text-align: center; /* 介绍居中对齐 */
+        color: #ccc; /* 介绍文字颜色 */
+      }
+
       @media (min-width: 720px) and (max-width: 820px) {
         .name {
           display: none;
@@ -212,7 +234,9 @@ onMounted(() => {
         height: 80px;
       }
       @media (max-width: 460px) {
-        flex-direction: column;
+        .icon-and-name {
+          flex-direction: column;
+        }
         .name {
           font-size: 1rem;
           margin-left: 0;

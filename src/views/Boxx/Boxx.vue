@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
-import xinxiLinksData from '@/assets/xinxiLinks.json'; // 引入 JSON 文件
+import xinxiLinks from '@/components/xinxiLinks.vue'; // 引入 .vue 文件
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
@@ -45,7 +45,7 @@ const show = () => {
 defineExpose({ show });
 
 // 定义 JSON 数据
-const xinxiLinks = ref(xinxiLinksData);
+const xinxiLinksData = ref(xinxiLinks);
 
 // 链接跳转
 const jumpLink = (data) => {

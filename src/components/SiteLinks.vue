@@ -10,20 +10,20 @@
 </template>
 
 <script>
-import siteLinks from '@/assets/siteLinks.json';
 import Set from '@/components/Set.vue';
 import Boxx from '@/views/Boxx/Boxx.vue';
+import SiteLinks from '@/components/SiteLinks.vue'; // 引入 SiteLinks.vue 组件
 
 export default {
   data() {
     return {
-      links: siteLinks,
+      links: SiteLinks.data(), // 使用 SiteLinks 组件的数据
       showSet: false,
     };
   },
   methods: {
     handleClick(link) {
-      if (link.name === '联系我们' || link.name === '店铺正在搭建') {
+      if (link.name === '联系我们' || link.name === '游戏科技卡网') {
         this.showSet = true;
       } else {
         window.location.href = link.link;
