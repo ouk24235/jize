@@ -12,12 +12,13 @@
       <!-- 新增内容 -->
       <h2 class="top-title" style="text-align: center; color: red; margin-top: 10px;">联系客服</h2> <!-- 置顶标题 -->
       <div class="content">
-        <h2>联系方式</h2>
-        <p>Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
-        <p>大号被冻结加这个👇<li>QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></li></p>
-        <p>添加请备注来意，如项目名称，或咨询的问题。</p>
-        <p>最新修订时间：<span style="color: red;">2024年9月12日</span></p>
-        <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
+        <h2 style="font-size: 2em;">联系方式</h2>
+        <p style="font-size: 2em;">Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
+        <p style="font-size: 2em;">大号被冻结加这个👇<li>QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></li></p>
+        <p style="font-size: 2em;">邮箱：<a  target="_blank">001@faka.assiw.xyz</a></p>
+        <p style="font-size: 2em;">添加请备注来意，如项目名称，或咨询的问题。</p>
+        <p style="font-size: 2em;">最新修订时间：<span style="color: red;">2024年9月12日</span></p>
+
       </div>
     </div>
   </div>  

@@ -259,7 +259,7 @@
         </div>
 
         <div class="footer">
-            <p class="ox1">© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
+
         </div>
 
     </div>
