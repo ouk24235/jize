@@ -199,6 +199,13 @@ const jumpLink = (url) => {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 768px) {
+  h2 {
+    font-size: 4px; /* 调整 h2 标题字体大小 */
+  }
+}
+
+
 
 .link-all {
   display: flex;
@@ -249,5 +256,11 @@ const jumpLink = (url) => {
   top: 20px;
   font-size: 1.5rem;
   color: red;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem; /* 手机访问时调整标题字体大小 */
+  }
 }
+
+
 </style>

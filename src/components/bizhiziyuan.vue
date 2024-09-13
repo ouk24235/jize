@@ -10,6 +10,7 @@
         </span>
 
         <!-- 新增内容 -->
+         <div class="buju">
           <div style="text-align: center;color: red;"><h2>🔥壁纸资源下载-记住我们的唯一地址：ASSIW.xyz </h2>
           <div class="link-container">
             <a href="https://wallhaven.cc/" class="aniu">Wallhaven</a>
@@ -18,7 +19,7 @@
             <a href="https://wall.alphacoders.com/" class="aniu">Wallpaper Abyss</a>
             <a href="https://beta.digitalblasphemy.com/" class="aniu">Digitalblasphemy</a>
           </div>
-        </div>
+         </div>
           <div style="text-align: center; color: red;"><h2>🔥二次元壁纸</h2>
           <div class="link-container">
             <a href="https://adzhp.xyz/sites/2751.html" class="aniu">Pixiv</a>
@@ -28,6 +29,7 @@
             <a href="https://www.wallpapermaiden.com/" class="aniu">Wallpapermaiden</a>
             <a href="https://www.reddit.com/r/wallpaper/" class="aniu">壁纸论坛 | Reddit Wallpaper</a>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -60,7 +62,69 @@ defineExpose({ show: () => { isVisible.value = true; } });
 
 </script>
 
+
 <style lang="scss" scoped>
+.buju {
+  .link-container {
+    display: flex;
+    flex-wrap: wrap; /* 自动换行 */
+    gap: 10px; /* 元素间距 */
+    justify-content: center; /* 水平居中 */
+    overflow-x: auto; /* 添加水平滚动条 */
+    scrollbar-width: thin; /* Firefox 滚动条宽度 */
+    scrollbar-color: rgba(0, 0, 0, 0.4) transparent; /* Firefox 滚动条颜色 */
+  }
+
+  .link-container::-webkit-scrollbar {
+    height: 8px; /* 滚动条高度 */
+  }
+
+  .link-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4); /* 滚动条滑块颜色 */
+    border-radius: 6px; /* 滚动条滑块圆角 */
+  }
+
+  .link-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.6); /* 滚动条滑块悬停颜色 */
+  }
+
+  .aniu {
+    height: 100px; /* 自动高度 */
+    width: 48%; /* 每行两个 */
+    display: inline-block; /* 行内块级元素 */
+    padding: 10px; /* 内边距 */
+    background: rgba(0, 0, 0, 0.4); /* 背景颜色和透明度 */
+    border-radius: 6px; /* 边框圆角 */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    cursor: pointer; /* 鼠标指针样式 */
+    transition: transform 0.3s, background 0.3s; /* 过渡效果 */
+    margin-top: 20px; /* 添加顶部边距20px */
+
+    &:hover {
+      transform: scale(1.02); /* 鼠标悬停时放大 */
+      background: rgba(0, 0, 0, 0.6); /* 鼠标悬停时背景颜色和透明度 */
+    }
+
+    &:active {
+      transform: scale(1); /* 鼠标按下时恢复原状 */
+    }
+  }
+
+  h2 {
+    font-size: 1.2rem; /* 缩小字体 */
+
+    display: flex;
+    flex-wrap: wrap; /* 自动换行 */
+    width: 70%; /* 宽度百分之70 */
+    gap: 10px; /* 元素间距 */
+    align-items: center; /* 垂直居中 */
+  
+  }
+
+
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -120,6 +184,7 @@ defineExpose({ show: () => { isVisible.value = true; } });
     width: 90%;
     height: 90%;
     padding: 20px;
+    
   }
 
   .close {
@@ -166,4 +231,5 @@ defineExpose({ show: () => { isVisible.value = true; } });
     font-size: 0.9rem; /* 调整段落和列表字体大小 */
   }
 }
+
 </style>

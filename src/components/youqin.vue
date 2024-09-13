@@ -13,11 +13,12 @@
         <div class="more-content">
           <h2 class="top-title">友情链接--记住 ASSIW.XYZ 防止走丢</h2> <!-- 置顶标题 -->
           <div class="link-all">
-            <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)">
+            <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)" >
               <i :class="link.icon"></i>
               <span class="name">{{ link.name }}</span>
               <div class="description">{{ link.description }}</div> <!-- 新增介绍 -->
             </div>
+
           </div>
         </div>
       </div>
@@ -105,7 +106,9 @@ const youqin = ref([
   
 ]);
 
-// 链接跳转
+
+
+// 按钮
 const loadComponent = (link) => {
   isVisible.value = false; // 隐藏当前页面
   if (link === '壁纸资源地址') {
@@ -113,6 +116,29 @@ const loadComponent = (link) => {
   } else if (link === 'bizi') {
     currentComponent.value = bizhiziyuan;
   }
+  else if (link === 'https://www.mangacopy.com/') { // 新增链接跳转
+    window.open('https://www.mangacopy.com/', '_blank');
+  }
+  else if (link === 'https://zh.singlelogin.re/') { // 新增链接跳转
+    window.open('https://zh.singlelogin.re/', '_blank');
+  }
+  else if (link === 'https://www.xianyudanji.net/') { // 新增链接跳转
+    window.open('https://www.xianyudanji.net/', '_blank');
+  }
+  else if (link === 'https://heimuer.tv/') { // 新增链接跳转
+    window.open('https://heimuer.tv/', '_blank');
+  }
+  else if (link === 'https://zyku.me/') { // 新增链接跳转
+    window.open('https://zyku.me/', '_blank');
+  }
+  else if (link === 'https://www.xiaozhongjishu.com/') { // 新增链接跳转
+    window.open('https://www.xiaozhongjishu.com/', '_blank');
+  }
+  else if (link === 'https://www.juzia.cn/') { // 新增链接跳转
+    window.open('https://www.juzia.cn/', '_blank');
+  }
+
+
 };
 </script>
 
@@ -180,19 +206,7 @@ const loadComponent = (link) => {
 
   .content h2, .content h3 {
     color: #ff4500; /* 标题颜色改为橙色 */
-  }
-
-  .content p, .content ul, .content li {
-    margin: 5px 0;
-  }
-
-  .content a {
-    color: #ff4500; /* 链接文字颜色改为橙色 */
-    text-decoration: none;
-  }
-
-  .content a:hover {
-    text-decoration: underline;
+  
   }
 
   /* 自定义滚动条样式 */
@@ -229,7 +243,7 @@ const loadComponent = (link) => {
   }
 
   .content h2, .content h3 {
-    font-size: 1.2rem; /* 调整标题字体大小 */
+    font-size: 4rem; /* 调整标题字体大小 */
   }
 
   .content p, .content ul, .content li {
@@ -277,6 +291,25 @@ const loadComponent = (link) => {
   &:active {
     transform: scale(1); /* 鼠标按下时恢复原状 */
   }
+}
+
+  @media (max-width: 768px) {
+    .link-all {
+
+      align-items: center; /* 水平居中 */
+      align-items: center; /* 垂直居中 */
+      justify-content: flex-start; /* 顶部对齐 */
+      overflow-y: auto; /* 允许垂直滚动 */
+
+    }
+
+    .item {
+      width: 48%; /* 每行放两个 */
+      margin-bottom: 10px; /* 增加底部间距 */
+    }
+
+
+  }
 
   .name {
     font-size: 1.1rem; /* 名称字体大小 */
@@ -290,7 +323,7 @@ const loadComponent = (link) => {
     text-align: center; /* 介绍居中对齐 */
     color: red; /* 介绍文字颜色改为红色 */
   }
-}
+
 
 .top-title {
   position: absolute;
@@ -298,4 +331,11 @@ const loadComponent = (link) => {
   font-size: 1.5rem;
   color: red;
 }
+
+@media (max-width: 768px) {
+  .top-title {
+    font-size: 1.15rem; /* 字体缩小百分之20 */
+  }
+}
+
 </style>

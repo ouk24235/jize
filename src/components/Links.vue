@@ -33,7 +33,7 @@
                 </Icon>
                 <span 
                   class="name text-hidden" 
-                  :style="{ color: item.name === '赚米项目' ||item.name === '友情链接' || item.name === '联系客服' ? 'red' : 'inherit' }"
+                  :style="{ color: item.name === '赚米项目' ||item.name === '友情链接' || item.name === '网站业务客服' ? 'red' : 'inherit' }"
                 >
                   {{ item.name }}
                 </span>
@@ -110,7 +110,7 @@ const siteIcon = {
 
 // 链接跳转
 const jumpLink = (data) => {
-  if (data.name === "联系客服") {
+  if (data.name === "网站业务客服") {
     showSetComponent.value = true; // 显示Sett组件
   } else if (data.name === "合作商店铺") {
     currentComponent.value = xinxiLinks; // 显示Boxx组件
