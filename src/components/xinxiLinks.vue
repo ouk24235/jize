@@ -11,7 +11,7 @@
 
         <!-- 新增内容 -->
         <div class="more-content">
-          <h2 class="top-title">全网最牛逼的辅助和账号购买地址</h2> <!-- 置顶标题 -->
+          <h2 class="top-title">全网最牛逼的数字产品购买地址</h2> <!-- 置顶标题 -->
           <div class="link-all">
             <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="jumpLink(link.link)">
               <i :class="link.icon"></i>
@@ -48,17 +48,18 @@ defineExpose({ show });
 
 // 定义 JSON 数据
 const xinxiLinks = ref([
+
   {
-    name: "西瓜24H自动发卡网",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://xgnb.online/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "邮箱账户类别-自营",
+    name: "自营店铺",
     icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
     link: "https://faka.assiw.xyz/",
     description: "（强烈推荐）" // 新增介绍
+  },
+  {
+    name: "其他店铺正在维护升级，暂时下线",
+    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
+    link: "https://faka.assiw.xyz/",
+    description: "其他店铺正在维护升级，暂时下线" // 新增介绍
   },
 ]);
 

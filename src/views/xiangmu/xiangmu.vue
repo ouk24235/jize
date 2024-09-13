@@ -54,13 +54,13 @@ const xinxiLinks = ref([
     name: "0成本租单返佣金",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "new-project",
-    description: "（一单300-1000）" // 新增介绍
+    description: "（门槛较低一单100-1000）" // 新增介绍
   },
   {
     name: "黑U承兑商",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "black-u",
-    description: "（一个白U换2个黑U）" // 新增介绍
+    description: "（门槛较高-利润拉满-具体看介绍）" // 新增介绍
   }
 ]);
 

@@ -127,6 +127,7 @@ const jumpLink = (data) => {
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
+    
   } else if (data.name === "YourComponentName") { // 替换为 YourComponent 的实际名称
     currentComponent.value = YourComponent; // 显示 YourComponent 组件
     nextTick(() => {
