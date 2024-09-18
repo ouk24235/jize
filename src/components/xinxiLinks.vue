@@ -56,10 +56,10 @@ const xinxiLinks = ref([
     description: "（强烈推荐）" // 新增介绍
   },
   {
-    name: "其他店铺正在维护升级，暂时下线",
+    name: "西瓜24H自助发卡网",
     icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://faka.assiw.xyz/",
-    description: "其他店铺正在维护升级，暂时下线" // 新增介绍
+    link: "https://xgnb.online/",
+    description: "菜单推荐" // 新增介绍
   },
 ]);
 

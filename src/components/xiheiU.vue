@@ -15,7 +15,7 @@
         <h2> ASSIW团队：诚信出盗来的U</h2>
         <div class="main-details">
             <p>唯一对接人：Telegram: <a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
-            <p>风控问题联系： QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></p>
+            <p>风控问题联系： QQ；<span @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 （点击复制）</span></p>
             <p>同台交易支持区域： 菲律宾、迪拜、香港等地区支持同台交易，其他地区目前只支持线上。</p>
             <p>简单介绍： 1白U约等于7人民币，你可以拿白U在我们这里兑换黑U，具体比例以及来源用途请看介绍。</p>
 

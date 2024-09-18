@@ -15,7 +15,7 @@
         <h2>联系方式</h2>
         <p>Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
         <p>Telegram群；<a href="https://t.me/Assiw666" target="_blank">@Assiw666（点击跳转）</a></p>
-        <p>大号被冻结加这个👇<li>QQ；<span @click="copyQQ('924160568')" style="color: #ff4500;">924160568 （点击复制）</span></li></p>
+        <p>大号被冻结加这个👇<li>QQ；<span @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 （点击复制）</span></li></p>
         <p>邮箱：<a  target="_blank">001@faka.assiw.xyz</a></p>
         <p>账号购买，网站搭建，等各种网络业务请添加联系方式</p>
         <p>添加请备注来意，如项目名称，或咨询的问题。</p>
