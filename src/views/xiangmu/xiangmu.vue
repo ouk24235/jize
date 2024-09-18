@@ -29,6 +29,8 @@
 import { ref, defineEmits, defineExpose } from 'vue';
 import YourComponent from '@/components/YourComponent.vue'; // 引入 .vue 文件
 import XiheiU from '@/components/xiheiU.vue'; // 引入新的 .vue 文件
+import gpttuiguan from '@/components/gpttuiguan.vue'; // 引入新的 .vue 文件
+import guanzhu from '@/components/guanzhu.vue'; // 引入新的 .vue 文件
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
@@ -51,6 +53,19 @@ defineExpose({ show });
 // 定义 JSON 数据
 const xinxiLinks = ref([
   {
+    name: "快手抖音关注单",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "guanzhu",
+    description: "（无任何收费，一个关注2元）" // 新增介绍
+    
+  },
+  {
+    name: "GPT代开业务拉新拉人",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "gpttuiguan",
+    description: "（无收费，即赚既所得一单20-30）" // 新增介绍
+  },
+  {
     name: "0成本租单返佣金",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "new-project",
@@ -62,16 +77,24 @@ const xinxiLinks = ref([
     link: "black-u",
     description: "（门槛较高-利润拉满-具体看介绍）" // 新增介绍
   }
+
 ]);
 
 // 引用 .vue 文件
 const loadComponent = (link) => {
   isVisible.value = false; // 隐藏当前页面
-  if (link === 'new-project') {
-    currentComponent.value = YourComponent;
-  } else if (link === 'black-u') {
-    currentComponent.value = XiheiU;
+  if (link === 'guanzhu') {
+    currentComponent.value = guanzhu;
   }
+  else if (link === 'new-project') {
+    currentComponent.value = YourComponent;
+  }else if (link === 'black-u') {
+    currentComponent.value = XiheiU;
+  } else if (link === 'gpttuiguan') {
+    currentComponent.value = gpttuiguan;
+  }
+  
+  
 };
 </script>
 
