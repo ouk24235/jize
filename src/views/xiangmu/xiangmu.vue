@@ -31,6 +31,7 @@ import YourComponent from '@/components/YourComponent.vue'; // 引入 .vue 文�
 import XiheiU from '@/components/xiheiU.vue'; // 引入新的 .vue 文件
 import gpttuiguan from '@/components/gpttuiguan.vue'; // 引入新的 .vue 文件
 import guanzhu from '@/components/guanzhu.vue'; // 引入新的 .vue 文件
+import shipin from '@/components/shipin.vue'; // 引入新的 .vue 文件
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
@@ -76,6 +77,12 @@ const xinxiLinks = ref([
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "black-u",
     description: "（无收费-门槛较高-利润1500-10W）" // 新增介绍
+  },
+  {
+    name: "短视频代发",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "shipin",
+    description: "（无收费-无门槛-一个平台5-10块）" // 新增介绍
   }
 
 ]);
@@ -92,6 +99,9 @@ const loadComponent = (link) => {
     currentComponent.value = XiheiU;
   } else if (link === 'gpttuiguan') {
     currentComponent.value = gpttuiguan;
+  }
+  else if (link === 'shipin') {
+    currentComponent.value = shipin;
   }
   
   
@@ -240,7 +250,7 @@ const loadComponent = (link) => {
 
 .item {
   height: 100px; /* 项目高度 */
-  width: 200px; /* 项目宽度 */
+  width: 266px; /* 项目宽度 */
   display: flex; /* 使用flex布局 */
   align-items: center; /* 垂直居中 */
   flex-direction: column; /* 垂直方向排列 */
@@ -258,6 +268,10 @@ const loadComponent = (link) => {
 
   &:active {
     transform: scale(1); /* 鼠标按下时恢复原状 */
+  }
+
+  @media (max-width: 768px) {
+    width: 48%; /* 当手机访问时宽度为百分之48 */
   }
 
   .name {

@@ -53,7 +53,7 @@ importers:
         version: 0.1.4(vue@3.4.24)
       '@vitejs/plugin-vue':
         specifier: ^4.6.2
-        version: 4.6.2(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(vue@3.4.24)
+        version: 4.6.2(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(vue@3.4.24)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -76,14 +76,14 @@ importers:
         specifier: ^0.22.12
         version: 0.22.12(@babel/parser@7.24.4)(rollup@3.29.4)(vue@3.4.24)
       vite:
-        specifier: ^4.5.3
-        version: 4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
+        specifier: ^4.5.5
+        version: 4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
       vite-plugin-compression:
         specifier: ^0.5.1
-        version: 0.5.1(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))
+        version: 0.5.1(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))
       vite-plugin-pwa:
         specifier: ^0.14.7
-        version: 0.14.7(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(workbox-build@6.6.0)(workbox-window@6.6.0)
+        version: 0.14.7(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(workbox-build@6.6.0)(workbox-window@6.6.0)
 
 packages:
 
@@ -2311,8 +2311,8 @@ packages:
       workbox-build: ^6.5.4
       workbox-window: ^6.5.4
 
-  vite@4.5.3:
-    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
+  vite@4.5.5:
+    resolution: {integrity: sha512-ifW3Lb2sMdX+WU91s3R0FyQlAyLxOzCSCP37ujw0+r5POeHPwe6udWVIElKQq8gk3t7b8rkmvqC6IHBpCff4GQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3434,9 +3434,9 @@ snapshots:
       '@xicons/utils': 0.1.4
       vue: 3.4.24
 
-  '@vitejs/plugin-vue@4.6.2(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(vue@3.4.24)':
+  '@vitejs/plugin-vue@4.6.2(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(vue@3.4.24)':
     dependencies:
-      vite: 4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
+      vite: 4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
       vue: 3.4.24
 
   '@vue/compiler-core@3.4.24':
@@ -4912,29 +4912,29 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite-plugin-compression@0.5.1(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)):
+  vite-plugin-compression@0.5.1(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)):
     dependencies:
       chalk: 4.1.2
       debug: 4.3.4
       fs-extra: 10.1.0
-      vite: 4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
+      vite: 4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-pwa@0.14.7(vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(workbox-build@6.6.0)(workbox-window@6.6.0):
+  vite-plugin-pwa@0.14.7(vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4))(workbox-build@6.6.0)(workbox-window@6.6.0):
     dependencies:
       '@rollup/plugin-replace': 5.0.5(rollup@3.29.4)
       debug: 4.3.4
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
       rollup: 3.29.4
-      vite: 4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
+      vite: 4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4)
       workbox-build: 6.6.0
       workbox-window: 6.6.0
     transitivePeerDependencies:
       - supports-color
 
-  vite@4.5.3(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4):
+  vite@4.5.5(@types/node@20.11.25)(sass@1.75.0)(terser@5.30.4):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.38
