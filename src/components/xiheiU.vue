@@ -255,7 +255,7 @@
                     <li>实名认证：务必使用真实信息进行实名认证，避免因身份验证失败而导致无法提现或账户冻结。</li>
                     <li>交易安全：在进行C2C交易时，确保与你交易的商家信誉良好，建议使用平台提供的担保交易服务。</li>
                     <p>最新修订时间：<span style="color: red;">{{ new Date().getFullYear() }}年{{ new Date().getMonth() + 1 }}月{{ new Date().getDate() }}日</span></p>
-                    <p style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
+                    <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
             </div>
         </div>
 

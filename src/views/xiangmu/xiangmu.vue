@@ -271,7 +271,7 @@ const loadComponent = (link) => {
   }
 
   @media (max-width: 768px) {
-    width: 48%; /* 当手机访问时宽度为百分之48 */
+    width: 80%; /* 当手机访问时宽度为百分之48 */
   }
 
   .name {
