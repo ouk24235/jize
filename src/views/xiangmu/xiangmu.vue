@@ -31,7 +31,7 @@ import YourComponent from '@/components/YourComponent.vue'; // 引入 .vue 文�
 import XiheiU from '@/components/xiheiU.vue'; // 引入新的 .vue 文件
 import gpttuiguan from '@/components/gpttuiguan.vue'; // 引入新的 .vue 文件
 import guanzhu from '@/components/guanzhu.vue'; // 引入新的 .vue 文件
-import shipin from '@/components/shipin.vue'; // 引入新的 .vue 文件
+//import shipin from '@/components/shipin.vue'; // 引入新的 .vue 文件
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
@@ -61,29 +61,30 @@ const xinxiLinks = ref([
     
   },
   {
-    name: "GPT代开业务拉新拉人",
-    icon: "i-icon-new", // 假设有一个新的图标类
-    link: "gpttuiguan",
-    description: "（无收费，即赚既所得一单20-30）" // 新增介绍
-  },
-  {
     name: "0成本租单返佣金",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "new-project",
     description: "（无收-费门槛较低一单300-1000）" // 新增介绍
   },
   {
+    name: "GPT代开业务拉新拉人",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "gpttuiguan",
+    description: "（无收费，即赚既所得一单20-30）" // 新增介绍
+  },
+
+  {
     name: "黑U承兑商",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "black-u",
     description: "（无收费-门槛较高-利润1500-10W）" // 新增介绍
   },
-  {
-    name: "短视频代发",
-    icon: "i-icon-new", // 假设有一个新的图标类
-    link: "shipin",
-    description: "（无收费-无门槛-一个平台5-10块）" // 新增介绍
-  }
+  //{
+  //  name: "短视频代发",
+ //   icon: "i-icon-new", // 假设有一个新的图标类
+  //  link: "shipin",
+  //  description: "（无收费-无门槛-一个平台5-10块）" // 新增介绍
+  //}
 
 ]);
 
@@ -100,9 +101,9 @@ const loadComponent = (link) => {
   } else if (link === 'gpttuiguan') {
     currentComponent.value = gpttuiguan;
   }
-  else if (link === 'shipin') {
-    currentComponent.value = shipin;
-  }
+  //else if (link === 'shipin') {
+ //   currentComponent.value = shipin;
+ // }
   
   
 };
@@ -284,7 +285,7 @@ const loadComponent = (link) => {
     font-size: 0.9rem; /* 介绍字体大小 */
     margin-top: 5px; /* 介绍上边距 */
     text-align: center; /* 介绍居中对齐 */
-    color: #ccc; /* 介绍文字颜色 */
+    color: #ff0000; /* 介绍文字颜色 */
   }
 }
 
