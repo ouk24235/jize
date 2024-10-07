@@ -4,7 +4,9 @@ const urlsToCache = [
   'https://zhuanqian.assiw.xyz/zhuanqian/index.html',
   'https://ziyuan.assiw.xyz',
   'https://zhuanqian.assiw.xyz/lxwm.html',
-  'https://tcmenu.cc/'
+  'https://tcmenu.cc/',
+  // 添加预加载背景库中的所有jpg文件
+  ...Array.from({ length: 41 }, (_, i) => `./src/views/zhuanqian/背景库/${i + 1}.jpg`)
 ];
 
 // 在安装 Service Worker 时进行缓存
@@ -42,12 +44,11 @@ self.addEventListener('fetch', (event) => {
             cache.put(event.request, networkResponse.clone());
             return networkResponse;
           });
+        }).catch((error) => {
+          console.error('Fetch failed; returning offline page instead.', error);
+          // 返回离线页面的缓存（可以添加一个离线.html到缓存）
+          return caches.match('\src\views\zhuanqian\offline.html'); // 假设有一个离线页面
         });
-      }).catch((error) => {
-        // 捕获任何错误并返回默认响应
-        console.error('Fetch failed; returning offline page instead.', error);
-        // 如果有离线页面，返回离线页面的缓存（可以添加一个离线.html到缓存）
-
       })
   );
 });
@@ -59,7 +60,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
+          if (!cacheWhitelist.includes(cacheName)) {
             return caches.delete(cacheName);
           }
         })

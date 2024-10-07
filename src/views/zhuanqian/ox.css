@@ -1,0 +1,76 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* 动态渐变样式应用到 ox1 和 ox2 */
+.ox1, .ox2, .ox3, .ox4, .oxx1, .oxx2 {
+    font-weight: bold;
+    background-size: 400% 400%; /* 扩展背景以适应动画效果 */
+    -webkit-background-clip: text; /* 只剪裁背景到文本 */
+    -webkit-text-fill-color: transparent; /* 确保文本颜色透明以显示渐变 */
+    background-clip: text; /* 支持非 WebKit 浏览器 */
+    text-fill-color: transparent; /* 支持非 WebKit 浏览器 */
+    animation: gradientAnimation 6s ease infinite; /* 动画效果 */
+
+
+}
+
+/* ox1 保持默认字体大小 */
+.ox1 {
+    font-size: 18px; /* 你可以调整字体大小 */
+}
+
+/* ox2 独立的 24px 字体大小 */
+.ox2 {
+    font-size: 24px;
+}
+.ox3 {
+    font-size: 29px;
+}
+.ox4 {
+    font-size: 34px;
+}
+.oxx1 {
+    font-size: 15px;
+}
+.oxx2 {
+    font-size: 12px;
+}
+
+body {
+    background-color: #f0f0f0; /* 背景色 */
+    margin: 0;
+    padding: 0;
+}
+
+.background-dynamic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* 确保背景图片在底层 */
+}
+
+.ox1, .ox2, .ox3, .ox4, .oxx1, .oxx2 {
+    z-index: 1; /* 确保动态字体在背景图片上方 */
+    position: relative; /* 确保它们处于背景图片的上方 */
+}
+
+body {
+  -webkit-touch-callout: none; /* 禁用长按弹出菜单 */
+  -webkit-user-select: none;   /* 禁用文本选择 */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
