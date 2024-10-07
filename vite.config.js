@@ -40,6 +40,50 @@ export default ({ mode }) =>
                 cacheName: "image-cache",
               },
             },
+            {
+              urlPattern: /^https:\/\/ziyuan\.assiw\.xyz\/.*$/, // 缓存 ziyuan.assiw.xyz 下的所有资源
+              handler: "StaleWhileRevalidate",
+              options: {
+                cacheName: "ziyuan-cache",
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // 缓存 7 天
+                },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/zhuanqian\.assiw\.xyz\/.*$/, // 缓存 zhuanqian.assiw.xyz 下的所有资源
+              handler: "StaleWhileRevalidate",
+              options: {
+                cacheName: "zhuanqian-cache",
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // 缓存 7 天
+                },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/zhuanqian\.assiw\.xyz\/zhuanqian\/.*$/, // 缓存 zhuanqian.assiw.xyz/zhuanqian/ 目录下的资源
+              handler: "StaleWhileRevalidate",
+              options: {
+                cacheName: "zhuanqian-page-cache",
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // 缓存 7 天
+                },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/zhuanqian\.assiw\.xyz\/背景库\/.*$/, // 缓存 zhuanqian.assiw.xyz/背景库/ 目录下的资源
+              handler: "StaleWhileRevalidate",
+              options: {
+                cacheName: "background-library-cache",
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // 缓存 7 天
+                },
+              },
+            },
           ],
         },
         manifest: {
@@ -89,6 +133,7 @@ export default ({ mode }) =>
           ],
         },
       }),
+      
       viteCompression(),
     ],
     server: {
