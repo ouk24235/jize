@@ -30,8 +30,7 @@ const emit = defineEmits(['close']);
 const isVisible = ref(true);
 
 // 定义初始 iframe URL
-const initialUrl = require('@/views/zhuanqian/index.vue'); // 更新为本地 HTML 文件路径
-
+const initialUrl = 'https://zhuanqian.assiw.xyz/zhuanqian/index.html';
 const iframeSrc = ref(`${initialUrl}?t=${Date.now()}`); // 加上时间戳来避免缓存
 
 // 关闭页面的方法

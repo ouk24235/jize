@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="background-dynamic"></div>
+    <div class="background-dynamic" :style="{ background: `url('https://zhuanqian.assiw.xyz/beijin.php?random=${Math.random()}')` }"></div>
     <div class="centent">
       <div class="main">
         <!-- 上部分 -->
@@ -76,37 +76,17 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { mainStore } from "@/store";
+
 export default {
+  setup() {
+    const store = mainStore();
+
+    return { bgUrl: store.bgUrl };
+  },
   mounted() {
     console.log("\n %c \u82CF\u753B %c http://assiw.xyz \n", "color: #fadfa3; background: #030307; padding:5px 0; font-size:12px;", "background: #fadfa3; padding:5px 0; font-size:12px;");
-
-    // 加载背景图片
-    fetch('./beijin.php')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('网络响应错误');
-        }
-        return response.json();
-      })
-      .then(images => {
-        if (images.length > 0) {
-          // 随机选择一张图片
-          const randomImage = images[Math.floor(Math.random() * images.length)];
-          const bgElement = document.querySelector('.background-dynamic');
-          document.body.style.backgroundSize = 'cover'; // 让图片覆盖整个页面
-          document.body.style.backgroundPosition = 'center'; // 图片居中
-          document.body.style.backgroundAttachment = 'fixed'; // 固定背景
-
-          // 设置背景图片
-          bgElement.style.backgroundImage = `url('./${randomImage}')`;
-          bgElement.style.backgroundSize = 'cover';
-          bgElement.style.backgroundPosition = 'center';
-          bgElement.style.backgroundAttachment = 'fixed';
-        }
-      })
-      .catch(error => {
-        console.error('加载图片时出错:', error);
-      });
   }
 }
 </script>
