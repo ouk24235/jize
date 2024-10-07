@@ -68,7 +68,11 @@ import gouwuche from "@/components/gouwuche.vue";
 import zhuanqian from "@/components/zhuanqian.vue";
 import yunduan from "@/components/yunduan.vue";
 import Boxx from '@/views/Boxx/Boxx.vue'; // 引入 Boxx 组件
-import xiangmu from '@/views/xiangmu/xiangmu.vue'; // 引入 xiangmu 组件
+//import xiangmu from '@/views/xiangmu/xiangmu.vue';
+import xiangmu1 from '@/views/xiangmu/xiangmu1.vue'; 
+import lxwm33 from '@/views/xiangmu/lxwm33.vue'; 
+import mianfeiziyuan from '@/views/xiangmu/mianfeiziyuan.vue'; 
+import fakaxigua from '@/views/xiangmu/fakaxigua.vue'; // 引入 xiangmu 组件
 import YourComponent from '@/components/YourComponent.vue'; // 引入 YourComponent 组件
 import xinxiLinks from '@/components/xinxiLinks.vue';
 import youqin from '@/components/youqin.vue'; // 引入 xiangmu 组件
@@ -111,14 +115,17 @@ const siteIcon = {
 // 链接跳转
 const jumpLink = (data) => {
   if (data.name === "网站业务客服") {
-    showSetComponent.value = true; // 显示Sett组件
-  } else if (data.name === "合作商店铺") {
-    currentComponent.value = xinxiLinks; // 显示Boxx组件
+    currentComponent.value = lxwm33; // 显示Sett组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 Boxx 组件的 show 方法
+    });
+  } else if (data.name === "合作商发卡网") {
+    currentComponent.value = fakaxigua; // 显示Boxx组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 Boxx 组件的 show 方法
     });
   } else if (data.name === "赚米项目") {
-    currentComponent.value = xiangmu; // 显示 xiangmu 组件
+    currentComponent.value = xiangmu1; // 显示 xiangmu 组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
@@ -127,6 +134,12 @@ const jumpLink = (data) => {
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
+  } else if (data.name === "免费资源工具") {
+    currentComponent.value = mianfeiziyuan; // 显示 xiangmu 组件
+    nextTick(() => {
+      dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
+    });
+    
     
   } else if (data.name === "YourComponentName") { // 替换为 YourComponent 的实际名称
     currentComponent.value = YourComponent; // 显示 YourComponent 组件

@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
 
 // 处理链接点击事件
 const handleClick = (link) => {
-  if (link.name === '合作商店铺') {
+  if (link.name === '合作商发卡网') {
     currentComponent.value = Boxx;
   } else {
     window.location.href = link.link;

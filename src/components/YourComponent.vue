@@ -26,37 +26,37 @@
             <li>6.项目仅接受<span style="color: green;">高信用</span>用户，杜绝涉黑涉恶人员。联系方式有Telegram、QQ和微信。</li>
           </ul>
           <h3>❓ 我们如何获利？</h3>    
-          <p>根据商家店铺信誉分考核需求，刷取三类数据：</p>
-          <ul>  
-            <li>一丶店铺订单数</li>
-            <li>二丶店铺订单金额</li>
-            <li>三丶店铺好评率</li>
-          </ul>
+          <p><li>根据商家店铺信誉分考核需求，刷取三类数据：</li>
+
+            <li style="color: red;">店铺订单数</li>
+            <li style="color: red;">店铺订单金额</li>
+            <li style="color: red;">店铺好评率</li>
+</p>
           <h3>💵 如何获得佣金</h3>
-          <p>丶我们在多个店铺发布多个商品。做单人员选择指定商品下单即可联系上级人员结算佣金。订单佣金与商品价值挂钩。</p>
+          <p><li>我们在多个店铺发布多个商品。做单人员选择指定商品下单即可联系上级人员结算佣金。订单佣金与商品价值挂钩。</li></p>
           <h3>💡 客户如何操作</h3>
-          <ul>
-            <li>一丶芝麻分必须是<span style="color: red;">600分</span>以上；<span style="color: red;">非</span>600分用户无法进行操作流程。</li>
-            <li>二丶下载并登录APP。</li>
-            <li>三丶选单客服选择指定商品。</li>
-            <li>四丶客户免押下单即可，无其他费用，平均一单半小时可以做完。</li>
-          </ul>
+
+            <p><li>芝麻分必须是<span style="color: red;">600分</span>以上；<span style="color: red;">非</span>600分用户无法进行操作流程。</li>
+            <li>下载并登录APP。</li>
+            <li>选单客服选择指定商品。</li>
+            <li>客户免押下单即可，无其他费用，平均一单半小时可以做完。</li></p>
+
           <h3>🧧 结算体系</h3>
-          <ul>
-            <li>丶客户：提供完成订单的截图给上级，把收款方式和订单截图发给上级后</li>
+
+            <p><li>客户：提供完成订单的截图给上级，把收款方式和订单截图发给上级后</li>
             <li>上级会当场结算，预计1-5分钟审核</li>
             <li><span style="color: red;">结账支持：</span>USDT（推荐）支付宝口令红包、微信红包。</li>
-            <li>成功收到奖励后我们会要你提供一个领取奖励的截屏。</li>
-          </ul>
+            <li>成功收到奖励后我们会要你提供一个领取奖励的截屏。</li></p>
+
           <h3>👨‍👨‍👦‍👦 客户群体</h3>
-          <p>丶目前只接受高信用用户的订单，防止扯皮。客户年龄区间在20-60之间，能熟练操作手机的。
+          <p><li>目前只接受高信用用户的订单，防止扯皮。客户年龄区间在20-60之间，能熟练操作手机的。</li>
             <LI>杜绝涉黑涉恶人员，防止卷款跑路。</LI></p>
-          <a href="https://as6.assiw.xyz/" target="_blank" style="color: #007bff; font-weight: bold; font-size: larger;">近期结单图-点我查看-图片过多-加载较慢</a>
+            <!-- <a href="https://as6.assiw.xyz/" target="_blank" style="color: #007bff; font-weight: bold; font-size: larger;">近期结单图-点我查看-图片过多-加载较慢</a> -->
           <h3>👦‍联系我们</h3>
           <p>该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
           <p>大号被冻结加这个QQ；<span @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 （点击复制）</span></p>
           <p >有意向请赶快联系我吧，<a style="color: red;">一单一结，不压单拖单，即做即结</a></p>
-          <p>最新修订时间：<span style="color: red;">{{ new Date().getFullYear() }}年{{ new Date().getMonth() + 1 }}月{{ new Date().getDate() }}日</span></p>
+          <p>最新确认时间：<span style="color: red;">{{ new Date().getFullYear() }}年{{ new Date().getMonth() + 1 }}月{{ new Date().getDate() }}日</span></p>
           <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>
         </div>
       </div>

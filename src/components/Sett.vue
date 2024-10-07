@@ -20,7 +20,7 @@
         <p>邮箱：<a  target="_blank">001@faka.assiw.xyz</a></p>
         <p>收徒-账号购买，网站搭建，等各种网络业务请添加联系方式</p>
         <p>添加请备注来意，如项目名称，或咨询的问题。</p>
-        <p>最新修订时间：<span style="color: red;">2024年9月12日</span></p>
+        <p>最新确认时间：<span style="color: red;">2024年9月12日</span></p>
 
       </div>
     </div>

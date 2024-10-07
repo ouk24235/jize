@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     handleClick(link) {
-      if (link.name === '联系我们' || link.name === '合作商店铺') {
+      if (link.name === '联系我们' || link.name === '合作商发卡网') {
         this.showSet = true;
       } else {
         window.location.href = link.link;
