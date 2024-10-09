@@ -160,23 +160,7 @@
             </div>
         </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // 从 beijin.php 获取图片列表
-        fetch('https://zhuanqian.assiw.xyz/beijin.php')
-          .then(response => response.json())
-          .then(images => {
-            if (images.length > 0) {
-              // 随机选择一张图片
-              const randomImage = images[Math.floor(Math.random() * images.length)];
-              
-              // 将随机选择的图片作为背景图片
-              document.body.style.backgroundImage = `url('${randomImage}')`;
-            }
-          })
-          .catch(error => console.error('Error fetching images:', error));
-      });
-    </script>
+
 </body>
 
 </html>

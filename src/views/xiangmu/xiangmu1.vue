@@ -25,12 +25,13 @@
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
 
+
 // 定义 emit
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
 
 // 定义初始 iframe URL
-const initialUrl = './src/views/zhuanqian/index.html';
+const initialUrl = './src/views/zhuanqian/zulin.html';
 const iframeSrc = ref(`${initialUrl}?t=${Date.now()}`); // 加上时间戳来避免缓存
 
 // 关闭页面的方法

@@ -11,7 +11,7 @@
 
       <div class="iframe-container">
         <iframe
-          src="./src/views/lxwm/lxwm.html"
+          :src="iframeSrc"
           frameborder="0"
           width="100%"
           height="100%"
@@ -25,19 +25,26 @@
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
 
+
 // 定义 emit
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
+
+// 定义初始 iframe URL
+const initialUrl = './src/views/lxwm/lxwm.html';
+const iframeSrc = ref(`${initialUrl}?t=${Date.now()}`); // 加上时间戳来避免缓存
 
 // 关闭页面的方法
 const close = () => {
   isVisible.value = false;
   emit('close');
+  iframeSrc.value = `${initialUrl}?t=${Date.now()}`; // 关闭时重置 URL 并加上时间戳
 };
 
 // 重新打开页面的方法
 const show = () => {
   isVisible.value = true; // 每次调用时重新设置为 true
+  iframeSrc.value = `${initialUrl}?t=${Date.now()}`; // 强制访问 initialUrl 并避免缓存
 };
 
 // 公开 show 方法用于外部调用
