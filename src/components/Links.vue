@@ -70,12 +70,13 @@ import yunduan from "@/components/yunduan.vue";
 import Boxx from '@/views/Boxx/Boxx.vue'; // 引入 Boxx 组件
 //import xiangmu from '@/views/xiangmu/xiangmu.vue';
 import xiangmu1 from '@/views/xiangmu/xiangmu1.vue'; 
+import youqin2 from '@/views/xiangmu/youqin2.vue'; 
 import lxwm33 from '@/views/xiangmu/lxwm33.vue'; 
 import mianfeiziyuan from '@/views/xiangmu/mianfeiziyuan.vue'; 
 import fakaxigua from '@/views/xiangmu/fakaxigua.vue'; // 引入 xiangmu 组件
 import YourComponent from '@/components/YourComponent.vue'; // 引入 YourComponent 组件
 import xinxiLinks from '@/components/xinxiLinks.vue';
-import youqin from '@/components/youqin.vue'; // 引入 xiangmu 组件
+//import youqin from '@/components/youqin.vue'; // 引入 xiangmu 组件
 
 const store = mainStore();
 const showSetComponent = ref(false); // 控制Set组件显示
@@ -130,7 +131,7 @@ const jumpLink = (data) => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
   } else if (data.name === "友情链接") {
-    currentComponent.value = youqin; // 显示 xiangmu 组件
+    currentComponent.value = youqin2; // 显示 xiangmu 组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });

@@ -9,7 +9,7 @@
     <meta name="author" content="ASSIW团队">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="./src/views/zhuanqian/beijin.php" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="./beijin.php" as="fetch" crossorigin="anonymous">
     <style>
         /* 隐藏所有滑轨 */
         ::-webkit-scrollbar {
@@ -22,7 +22,9 @@
             background-color: transparent; /* 背景颜色改为透明 */
             position: relative; /* 设置相对定位以便绝对定位的子元素 */
             height: 100vh; /* 设置高度为视口高度 */
-            overflow: auto; /* 允许滚动 */
+
+            background-size: cover; /* 背景图片全屏填充 */
+            background-attachment: fixed; /* 背景图片固定 */
         }
 
         .background-dynamic {
@@ -46,6 +48,7 @@
             position: relative; /* 设置相对定位，确保在背景层上 */
             z-index: 1; /* 确保内容在背景层上 */
             height: auto; /* 设置高度为自动 */
+            overflow: auto; /* 允许内容滚动 */
         }
 
         h2 {
@@ -98,7 +101,7 @@
         @media (max-width: 768px) {
             .content {
                 padding: 15px;
-                 padding: 6px; /* 添加左右边距为6 */
+                padding: 6px; /* 添加左右边距为6 */
             }
         }
     </style>
@@ -132,7 +135,7 @@
             <p>邮箱：<a class="email" href="mailto:001@faka.assiw.xyz">001@faka.assiw.xyz</a></p>
             <p>收徒-账号购买，网站搭建，等各种网络业务请添加联系方式</p>
             <p>添加请备注来意，如项目名称，或咨询的问题。</p>
-<p>二维码需要截屏再去扫描 网站限制了右键 请谅解</p>
+            <p>二维码需要截屏再去扫描 网站限制了右键 请谅解</p>
             <p>最新确认时间：<span style="color: #d9534f;" id="current-time"></span></p>
             <script>
                 function updateTime() {
@@ -149,61 +152,30 @@
         <div class="qr-code">
             <div>
                 <h2>QQ二维码</h2>
-                <img src="src/views/lxwm/qq.jpg" alt="QQ二维码" onclick="saveImage('src/views/lxwm/qq.jpg')" style="cursor: pointer;">
-                <script>
-                    function saveImage(imageUrl) {
-                        if (window.innerWidth < 768) {
-                            const link = document.createElement('a');
-                            link.href = imageUrl;
-                            link.download = 'qq.jpg';
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            alert('图片已保存到手机相册');
-                        } else {
-                            alert('请在手机上点击保存图片');
-                        }
-                    }
-                </script>
+                <img src="https://zhuanqian.assiw.xyz/qq.jpg" alt="QQ二维码">
             </div>
             <div>
                 <h2>微信二维码</h2>
-                <img src="src/views/lxwm/wx.jpg" alt="微信二维码" onclick="saveImage('src/views/lxwm/wx.jpg')" style="cursor: pointer;">
+                <img src="https://zhuanqian.assiw.xyz/wx.jpg" alt="微信二维码">
             </div>
         </div>
     </div>
-<script type="text/javascript">
-        console.log("\n %c \u82CF\u753B %c http://assiw.xyz \n", "color: #fadfa3; background: #030307; padding:5px 0; font-size:12px;", "background: #fadfa3; padding:5px 0; font-size:12px;");
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // 加载背景图片
-            fetch('./src/views/zhuanqian/beijin.php')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('网络响应错误');
-                    }
-                    return response.json();
-                })
-                .then(images => {
-                    if (images.length > 0) {
-                        // 随机选择一张图片
-                        const randomImage = images[Math.floor(Math.random() * images.length)];
-                        const bgElement = document.querySelector('.background-dynamic');
-                        document.body.style.backgroundSize = 'cover'; // 让图片覆盖整个页面
-                        document.body.style.backgroundPosition = 'center'; // 图片居中
-                        document.body.style.backgroundAttachment = 'fixed'; // 固定背景
-
-                        // 设置背景图片
-                        bgElement.style.backgroundImage = `url('./${randomImage}')`;
-                        bgElement.style.backgroundSize = 'cover';
-                        bgElement.style.backgroundPosition = 'center';
-                        bgElement.style.backgroundAttachment = 'fixed';
-                    }
-                })
-                .catch(error => {
-                    console.error('加载图片时出错:', error);
-                });
-        });
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // 从 beijin.php 获取图片列表
+        fetch('https://zhuanqian.assiw.xyz/beijin.php')
+          .then(response => response.json())
+          .then(images => {
+            if (images.length > 0) {
+              // 随机选择一张图片
+              const randomImage = images[Math.floor(Math.random() * images.length)];
+              
+              // 将随机选择的图片作为背景图片
+              document.body.style.backgroundImage = `url('${randomImage}')`;
+            }
+          })
+          .catch(error => console.error('Error fetching images:', error));
+      });
     </script>
 </body>
 

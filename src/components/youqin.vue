@@ -1,144 +1,130 @@
 <template>
-    <div class="overlay" v-show="isVisible" @click="close">
-      <div class="set" @click.stop>
-        <span class="i-icon i-icon-close-one close" @click="close">
-          <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-            <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="#ffffff60" stroke="#ffffff60" stroke-width="4" stroke-linejoin="round"></path>
-            <path d="M29.6567 18.3432L18.343 29.6569" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M18.3433 18.3432L29.657 29.6569" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </span>
+  <div class="overlay" v-show="isVisible" @click="close">
+    <div class="set" @click.stop>
+      <span class="i-icon i-icon-close-one close" @click="close">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="#ffffff60" stroke="#ffffff60" stroke-width="4" stroke-linejoin="round"></path>
+          <path d="M29.6567 18.3432L18.343 29.6569" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M18.3433 18.3432L29.657 29.6569" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
 
-        <!-- 新增内容 -->
-        <div class="more-content">
-          <h2 class="top-title">友情链接--记住 ASSIW.XYZ 防止走丢</h2> <!-- 置顶标题 -->
-          <div class="link-all">
-            <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)" >
-              <i :class="link.icon"></i>
-              <span class="name">{{ link.name }}</span>
-              <div class="description">{{ link.description }}</div> <!-- 新增介绍 -->
-            </div>
-
+      <div class="more-content">
+        <h2 class="top-title">友情链接--记住 ASSIW.XYZ 防止走丢</h2>
+        <h3 class="sub-title">正规影视类：</h3>
+        <div class="link-all">
+          <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)">
+            <i :class="link.icon"></i>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div>
           </div>
         </div>
+
+        <hr class="separator" />
+
+        <h3 class="sub-title">老司机福利资源类：</h3>
+        <div class="link-all">
+          <div class="item" v-for="link in laosiji" :key="link.name" @click="loadComponent(link.link)">
+            <i :class="link.icon"></i>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div>
+          </div>
+        </div>
+
+        <hr class="separator" />
+
+        <h3 class="sub-title">工具类：</h3>
+        <div class="link-all">
+          <div class="item" v-for="link in otherLinks" :key="link.name" @click="loadComponent(link.link)">
+            <i :class="link.icon"></i>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div>
+          </div>
+        </div>
+
+        <hr class="separator" />
+
+        <h3 class="sub-title">书籍小说类：</h3>
+        <div class="link-all">
+          <div class="item" v-for="link in shuji" :key="link.name" @click="loadComponent(link.link)">
+            <i :class="link.icon"></i>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div>
+          </div>
+        </div>
+
+        <hr class="separator" />
+
+        <h3 class="sub-title">游戏类：</h3>
+        <div class="link-all">
+          <div class="item" v-for="link in youxi" :key="link.name" @click="loadComponent(link.link)">
+            <i :class="link.icon"></i>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div>
+          </div>
+        </div>
+
       </div>
-    </div>  
-    <component :is="currentComponent" v-if="currentComponent" @close="show" />
+    </div>
+  </div>
+  <component :is="currentComponent" v-if="currentComponent" @close="show" />
 </template>
 
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
-
-import bizhiziyuan from '@/components/bizhiziyuan.vue'; // 引入 .vue 文件
-
+import bizhiziyuan from '@/components/bizhiziyuan.vue';
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
 const currentComponent = ref(null);
 
+const youqin = ref([
+  { name: '橘子资源网', icon: '/images/icon/xigua.jpg', link: 'https://www.juzia.cn/', description: '强烈推荐' },
 
+  { name: '资源库', icon: '/images/icon/xigua.jpg', link: 'https://zyku.me/', description: '强烈推荐' },
+  { name: '黑木耳资源站', icon: '/images/icon/xigua.jpg', link: 'https://heimuer.tv/', description: '强烈推荐' },
+  { name: '咸鱼单机游戏下载', icon: '/images/icon/xigua.jpg', link: 'https://www.xianyudanji.net/', description: '强烈推荐' },
+  { name: 'Z-Library书籍资源', icon: '/images/icon/xigua.jpg', link: 'https://zh.singlelogin.re/', description: '强烈推荐' },
+]);
+
+const laosiji = ref([
+  { name: '老司机链接1', link: 'https://ziyuan.assiw.xyz/', description: '示例描述1' },
+]);
+
+const otherLinks = ref([
+  { name: '工具链接1', link: 'https://zyku.me/', description: '工具类资源' },
+  { name: '小众技术工具库', icon: '/images/icon/xigua.jpg', link: 'https://www.xiaozhongjishu.com/', description: '强烈推荐' },
+]);
+
+const shuji = ref([
+  { name: '工具链接1', link: 'https://zyku.me/', description: '工具类资源' },
+  { name: '小众技术工具库', icon: '/images/icon/xigua.jpg', link: 'https://www.xiaozhongjishu.com/', description: '强烈推荐' },
+]);
+
+const youxi = ref([
+  { name: '工具链接1', link: 'https://zyku.me/', description: '工具类资源' },
+  { name: '小众技术工具库', icon: '/images/icon/xigua.jpg', link: 'https://www.xiaozhongjishu.com/', description: '强烈推荐' },
+]);
 
 const close = () => {
   isVisible.value = false;
   emit('close');
 };
 
-// 新增方法用于重新显示内容
 const show = () => {
   isVisible.value = true;
-  currentComponent.value = null; // 清除当前组件
+  currentComponent.value = null;
 };
 
-// 公开 show 方法
 defineExpose({ show });
 
-// 定义 JSON 数据
-const youqin = ref([
-  {
-    name: "橘子资源网",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://www.juzia.cn/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "小众技术工具库",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://www.xiaozhongjishu.com/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "资源库",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://zyku.me/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "黑木耳资源站",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://heimuer.tv/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "咸鱼单机游戏下载",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://www.xianyudanji.net/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "Z-Library书籍资源",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://zh.singlelogin.re/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "看漫画-（拷贝漫画",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "https://www.mangacopy.com/",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  {
-    name: "壁纸资源地址",
-    icon: "/images/icon/xigua.jpg", // 假设有一个新的图标类
-    link: "bizi",
-    description: "（强烈推荐）" // 新增介绍
-  },
-  
-  
-]);
-
-
-
-// 按钮
 const loadComponent = (link) => {
-  isVisible.value = false; // 隐藏当前页面
-  if (link === '壁纸资源地址') {
+  isVisible.value = false;
+  if (link === 'bizi') {
     currentComponent.value = bizhiziyuan;
-  } else if (link === 'bizi') {
-    currentComponent.value = bizhiziyuan;
+  } else {
+    window.open(link, '_blank');
   }
-  else if (link === 'https://www.mangacopy.com/') { // 新增链接跳转
-    window.open('https://www.mangacopy.com/', '_blank');
-  }
-  else if (link === 'https://zh.singlelogin.re/') { // 新增链接跳转
-    window.open('https://zh.singlelogin.re/', '_blank');
-  }
-  else if (link === 'https://www.xianyudanji.net/') { // 新增链接跳转
-    window.open('https://www.xianyudanji.net/', '_blank');
-  }
-  else if (link === 'https://heimuer.tv/') { // 新增链接跳转
-    window.open('https://heimuer.tv/', '_blank');
-  }
-  else if (link === 'https://zyku.me/') { // 新增链接跳转
-    window.open('https://zyku.me/', '_blank');
-  }
-  else if (link === 'https://www.xiaozhongjishu.com/') { // 新增链接跳转
-    window.open('https://www.xiaozhongjishu.com/', '_blank');
-  }
-  else if (link === 'https://www.juzia.cn/') { // 新增链接跳转
-    window.open('https://www.juzia.cn/', '_blank');
-  }
-
-
 };
 </script>
 
@@ -159,183 +145,97 @@ const loadComponent = (link) => {
 .set {
   position: relative;
   width: 80%;
-  height: 80%;
-  background: rgba(255, 255, 255, 0.0); /* 半透明背景 */
-  backdrop-filter: blur(20px); /* 模糊效果 */
+  height: auto;
+  max-height: 80%;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.0);
+  backdrop-filter: blur(20px);
   border-radius: 6px;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 置顶内容 */
+  justify-content: flex-start;
   align-items: center;
-
-  @media (max-width: 768px) {
-    width: 90%;
-    height: 90%;
-    padding: 20px;
-  }
-
-  .close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    &:active {
-      transform: scale(1);
-    }
-  }
-
-  .content {
-    width: 100%;
-    height: calc(100% - 40px); /* 减去 padding 的高度 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* 置顶内容 */
-    padding-top: 10px; /* 添加一些顶部填充 */
-    overflow-y: auto; /* 允许内容滚动 */
-    color: #fff; /* 文字颜色改为白色 */
-    text-align: left; /* 左对齐文字 */
-  }
-
-  .content h2, .content h3 {
-    color: #ff4500; /* 标题颜色改为橙色 */
-  
-  }
-
-  /* 自定义滚动条样式 */
-  .content::-webkit-scrollbar {
-    width: 3px; /* 滚动条宽度 */
-  }
-
-  .content::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* 滚动条轨道颜色 */  
-    border-radius: 5px; /* 滚动条轨道圆角 */
-    margin-top: 10px; /* 滚动条轨道上边距 */
-  }
-
-  .content::-webkit-scrollbar-thumb {   
-    background: rgba(185, 185, 185, 0.8); /* 滚动条滑块颜色 */
-    border-radius: 4px; /* 滚动条滑块圆角 */
-    min-height: 30px; /* 滚动条滑块最小高度 */
-  }
-
-  .content::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 69, 0, 1); /* 滚动条滑块悬停颜色 */
-  }
 }
 
-@media (max-width: 480px) {
-  .set {
-    width: 90%;
-    height: 95%;
-    padding: 10px;
-  }
-
-  .content {
-    padding-top: 5px;
-  }
-
-  .content h2, .content h3 {
-    font-size: 4rem; /* 调整标题字体大小 */
-  }
-
-  .content p, .content ul, .content li {
-    font-size: 0.9rem; /* 调整段落和列表字体大小 */
-  }
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px; /* 将关闭按钮放置在右上角 */
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
 }
 
-/* 新增样式 */
 .more-content {
   display: flex;
-  flex-direction: column; /* 垂直方向排列 */
-  align-items: center; /* 水平居中 */
-  justify-content: flex-start; /* 顶部对齐 */
-  margin-top: 20px;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
 }
 
 .link-all {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 电脑端一行显示4个按钮 */
   gap: 10px;
-  margin-top: 30px; /* 增加顶部间距 */
 }
 
 .item {
-  height: 100px; /* 项目高度 */
-  width: 200px; /* 项目宽度 */
-  display: flex; /* 使用flex布局 */
-  align-items: center; /* 垂直居中 */
-  flex-direction: column; /* 垂直方向排列 */
-  justify-content: center; /* 水平居中 */
-  padding: 10px; /* 内边距 */
-  background: rgba(0, 0, 0, 0.4); /* 背景颜色和透明度 */
-  border-radius: 6px; /* 边框圆角 */
-  cursor: pointer; /* 鼠标指针样式 */
-  transition: transform 0.3s, background 0.3s; /* 过渡效果 */
-
-  &:hover {
-    transform: scale(1.02); /* 鼠标悬停时放大 */
-    background: rgba(0, 0, 0, 0.6); /* 鼠标悬停时背景颜色和透明度 */
-  }
-
-  &:active {
-    transform: scale(1); /* 鼠标按下时恢复原状 */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
 }
 
-  @media (max-width: 768px) {
-    .link-all {
+.item:hover {
+  transform: scale(1.05);
+}
 
-      align-items: center; /* 水平居中 */
-      align-items: center; /* 垂直居中 */
-      justify-content: flex-start; /* 顶部对齐 */
-      overflow-y: auto; /* 允许垂直滚动 */
+.name {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white;
+}
 
-    }
-
-    .item {
-      width: 48%; /* 每行放两个 */
-      margin-bottom: 10px; /* 增加底部间距 */
-    }
-
-
-  }
-
-  .name {
-    font-size: 1.1rem; /* 名称字体大小 */
-    margin-top: 0px; /* 名称上边距 */
-    text-align: center; /* 名称居中对齐 */
-  }
-
-  .description {
-    font-size: 0.9rem; /* 介绍字体大小 */
-    margin-top: 5px; /* 介绍上边距 */
-    text-align: center; /* 介绍居中对齐 */
-    color: red; /* 介绍文字颜色改为红色 */
-  }
-
-
-.top-title {
-  position: absolute;
-  top: 20px;
-  font-size: 1.5rem;
+.description {
+  margin-top: 5px;
+  font-size: 0.8rem;
   color: red;
 }
 
-@media (max-width: 768px) {
-  .top-title {
-    font-size: 1.15rem; /* 字体缩小百分之20 */
-  }
+h2 {
+  color: red;
+  text-align: center;
 }
 
+h3 {
+  color: orange;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .link-all {
+    grid-template-columns: repeat(2, 1fr); /* 手机端一行显示2个按钮 */
+    gap: 10px;
+  }
+
+  .item {
+    padding: 8px;
+  }
+
+  .name {
+    font-size: 0.9rem; /* 手机端缩小name字体 */
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
 </style>

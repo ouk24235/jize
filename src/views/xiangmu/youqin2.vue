@@ -30,7 +30,7 @@ const emit = defineEmits(['close']);
 const isVisible = ref(true);
 
 // 定义初始 iframe URL
-const initialUrl = 'https://ziyuan.assiw.xyz';
+const initialUrl = 'https://zhuanqian.assiw.xyz/youqin2.html';
 const iframeSrc = ref(initialUrl); // 移除时间戳以避免缓存
 
 // 关闭页面的方法
