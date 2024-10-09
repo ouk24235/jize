@@ -31,7 +31,7 @@ const emit = defineEmits(['close']);
 const isVisible = ref(true);
 
 // 定义初始 iframe URL
-const initialUrl = '/zhuanqian/zulin.html'; // 假设文件在 public/zhuanqian/zulin.html // 使用 Webpack 的 require
+const initialUrl = 'https://zhuanqian.assiw.xyz/zhuanqian/index.html'; // 假设文件在 public/zhuanqian/zulin.html // 使用 Webpack 的 require
 const iframeSrc = ref(`${initialUrl}?t=${Date.now()}`); // 加上时间戳来避免缓存
 
 // 关闭页面的方法
