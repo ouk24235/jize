@@ -10,7 +10,7 @@
       </span>
 
       <div class="more-content">
-        <h2 class="top-title">友情链接--记住 ASSIW.XYZ 防止走丢</h2>
+        <h2 class="top-title">资源站--记住 ASSIW.XYZ 防止走丢</h2>
         <h3 class="sub-title">正规影视类：</h3>
         <div class="link-all">
           <div class="item" v-for="link in youqin" :key="link.name" @click="loadComponent(link.link)">

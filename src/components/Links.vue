@@ -33,7 +33,7 @@
                 </Icon>
                 <span 
                   class="name text-hidden" 
-                  :style="{ color: item.name === '赚米项目' ||item.name === '友情链接' || item.name === '网站业务客服' ? 'red' : 'inherit' }"
+                  :style="{ color: item.name === '赚米项目' ||item.name === '看片-资源-工具' || item.name === '网站业务客服' ? 'red' : 'inherit' }"
                 >
                   {{ item.name }}
                 </span>
@@ -130,7 +130,7 @@ const jumpLink = (data) => {
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
-  } else if (data.name === "友情链接") {
+  } else if (data.name === "看片-资源-工具") {
     currentComponent.value = youqin2; // 显示 xiangmu 组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
