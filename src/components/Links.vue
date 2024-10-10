@@ -135,7 +135,7 @@ const jumpLink = (data) => {
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
     });
-  } else if (data.name === "免费资源工具") {
+  } else if (data.name === "友情链接") {
     currentComponent.value = mianfeiziyuan; // 显示 xiangmu 组件
     nextTick(() => {
       dynamicComponentRef.value?.show(); // 调用 xiangmu 组件的 show 方法
