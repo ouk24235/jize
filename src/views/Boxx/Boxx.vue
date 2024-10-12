@@ -14,7 +14,7 @@
         <div class="link-all">
           <div class="item" v-for="(item, index) in xinxiLinks" :key="item.name" @click="jumpLink(item)">
             <i :class="item.icon"></i>
-            <span class="name" :style="{ color: item.name === '赚米项目' || item.name === '联系我们' ? 'red' : 'inherit' }">
+            <span class="name" :style="{ color: item.name === '兼职项目' || item.name === '联系我们' ? 'red' : 'inherit' }">
               {{ item.name }}
             </span>
           </div>
