@@ -6,7 +6,7 @@
         <span class="name">
           {{ siteName }}
         </span>
-        <span class="tip"> 加载中..打不开请刷新页面或重新打开页面 </span>
+        <span class="tip"> 加载中..请等待3-8秒.. </span>
       </div>
     </div>
     <div class="loader-section section-left" />
