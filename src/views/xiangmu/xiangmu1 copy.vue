@@ -8,7 +8,6 @@
           <path d="M18.3433 18.3432L29.657 29.6569" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </span>
-      
 
       <!-- 新增内容 -->
       <div class="more-content">
@@ -16,8 +15,8 @@
         <div class="link-all">
           <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="loadComponent(link.link)">
             <i :class="link.icon"></i>
-            <span :class="link.name === '租赁反佣金' ? 'yellow-text' : (link.name === '快手抖音关注单' || link.name === '视频代发' ? 'red-text' : '')">{{ link.name }}</span> <!-- 条件渲染 -->
-            <div class="description">{{ link.description }}</div>
+            <span class="name">{{ link.name }}</span>
+            <div class="description">{{ link.description }}</div> <!-- 新增介绍 -->
           </div>
         </div>
       </div>
@@ -30,12 +29,12 @@
 import { ref, defineEmits, defineExpose } from 'vue';
 
 
-import daifa from '@/views/xmzujian/daifa.vue'; // 新增导入
-import douyin from '@/views/xmzujian/douyin.vue'; // 新增导入
-import qqkuolie from '@/views/xmzujian/qqkuolie.vue'; // 新增导入
-import usdt from '@//views/xmzujian/usdt.vue'; // 新增导入
-import zulin from '@/views/xmzujian/zulin.vue'; // 新增导入
-import vxzhuc from '@/views/xmzujian/vxzhuc.vue'; // 新增导入
+import daifa from '@/src/views/xmzujian/daifa.vue'; // 新增导入
+import douyin from '@/src/views/xmzujian/douyin.vue'; // 新增导入
+import qqkuolie from '@/src/views/xmzujian/qqkuolie.vue'; // 新增导入
+import usdt from '@/src/views/xmzujian/usdt.vue'; // 新增导入
+import zulin from '@/src/views/xmzujian/zulin.vue'; // 新增导入
+import vxzhuc from '@/src/views/xmzujian/vxzhuc.vue'; // 新增导入
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
@@ -83,10 +82,10 @@ const xinxiLinks = ref([
   description: "（利润较高 但门槛高 且需要本本金）" // 新增介绍
 },
 {
-  name: "租赁反佣金", // 加红
+  name: "租赁反佣金",
   icon: "i-icon-new", // 假设有一个新的图标类
   link: "zulin", // 新增链接
-  description: "一单佣金200-800不等" // 新增介绍
+  description: "无任何收费，一个关注2元" // 新增介绍
 },
 {
   name: "微信辅助注册",
@@ -119,19 +118,6 @@ if (link === 'vxzhuc') {
 </script>
 
 <style lang="scss" scoped>
-
-.red-text {
-  color: red;
-  font-weight: bold; // 加粗
-  font-size: 1.3em; // 字体放大1.3倍
-
-}
-.yellow-text {
-  color: rgb(0, 255, 26);
-  font-weight: bold; // 加粗
-  font-size: 1.3em; // 字体放大1.3倍
-
-}
 .overlay {
 position: fixed;
 top: 0;
@@ -147,10 +133,10 @@ z-index: 1000;
 
 .set {
 position: relative;
-width: 55%;
+width: 80%;
 height: 80%;
 background: rgba(255, 255, 255, 0.0); /* 半透明背景 */
-backdrop-filter: blur(10px); /* 模糊效果 */
+backdrop-filter: blur(20px); /* 模糊效果 */
 border-radius: 6px;
 padding: 40px;
 display: flex;
