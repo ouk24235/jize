@@ -13,10 +13,10 @@
 
         <div class="assiw-container">
             <h2 style="color: #ff4500;">🔥租赁项目</h2>
-            <p style="color: #32cd32;">🔥 本篇为项目介绍</p>
-            <p style="color: #32cd32;">🔥 0成本 一手项目 利润给足</p>
-            <p style="color: #32cd32;">🔥 每单可反佣金300-800</p>
-            <p style="color: #32cd32;">🔥 在家有一部手机就能做</p>
+            <p style="color: #ff4500;">🔥 本篇为租赁项目介绍</p>
+            <p style="color: #ff4500;">🔥 0成本 一手项目 利润给足</p>
+            <p style="color: #ff4500;">🔥 每单可反佣金300-800</p>
+            <p style="color: #ff4500;">🔥 在家有一部手机就能做</p>
 
             <h4 class="highlight">项目简介👇:</h4>
             <ul>
@@ -24,8 +24,7 @@
                 <li style="color: #ffffff;">2. 项目旨在提升店铺信誉，包括增加订单数量、交易金额及好评率。</li>
                 <li style="color: #ffffff;">3. 支持支付宝和微信结算，单笔订单平均佣金为300-800元。</li>
                 <li style="color: #ffffff;">4. 800佣金的订单（<span style="color: #ffcc00;">需养号，做成常驻客户，以符合条件</span>）。</li>
-                <li style="color: #ffffff;">5. 代理拉新，一个人80元，多拉多得。</li>
-                <li style="color: #ffffff;">6. 目前我们优先接受<span style="color: #ffcc00;">高信用</span>用户，严禁涉黑涉恶人员参与。联系方式包括Telegram、QQ和微信。</li>
+                <li style="color: #ffffff;">5. 目前我们优先接受<span style="color: #ffcc00;">高信用</span>用户，严禁涉黑涉恶人员参与。联系方式包括QQ和微信。</li>
             </ul>
             <h4 class="highlight">正文👇：</h4>
             <h3 style="color: #ffcc00;">❓ 我们如何获利？</h3>
@@ -38,17 +37,19 @@
 
             <h3 style="color: #ffcc00;">💵 如何获得佣金</h3>
             <ul>
-                <li style="color: #ffffff;">我们在多个店铺发布多个商品。做单人员选择客服指定商品下单成功租赁，提供订单截图给负责人员结算佣金。</li>
+                <li style="color: #ffffff;">我们在多个店铺发布多个商品。</li>
+                <li style="color: #ffffff;">做单人员选择客服指定商品下单成功租赁。</li>
+                <li style="color: #ffffff;">提供订单截图给负责人员结算佣金。</li>
                 <li style="color: #ffffff;">具体操作流程请联系下方客服，下方客服指导操作流程</li>
             </ul>
 
-            <h3 style="color: #ffcc00;">💡 客户如何操作</h3>
+            <h3 style="color: #ffcc00;">💡 用户如何操作</h3>
             <ul>
                 <li style="color: #ffffff;">为确保顺利参与，您的芝麻分需在<span style="color: #ffcc00;">600分</span>以上；若低于600分，则无法进行操作流程。</li>
-                <li style="color: #ffffff;">下载并登录悠悠有品APP（请在手机应用商店下载，避免遇到假冒APP）。</li>
-                <li style="color: #ffffff;">为保证账号安全，需要用户自行注册一个悠悠有品账号</li>
+                <li style="color: #ffffff;">下载并登录APP。</li>
+                <li style="color: #ffffff;">用户自行登入APP</li>
                 <li style="color: #ffffff;">客服选择指定商品。</li>
-                <li style="color: #ffffff;">用户免押下单即可，中途无任何费用，平均一单5-20分钟可以做完。</li>
+                <li style="color: #ffffff;">用户选择下单即可，中途无任何费用，平均一单5-20分钟可以做完。</li>
             </ul>
 
             <h3 style="color: #ffcc00;">🧧 结算体系</h3>
@@ -68,12 +69,13 @@
             </ul>
 
             <h3 style="color: #ffcc00;">👦‍联系我们</h3>
-            <p style="color: #ffffff;">该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank" style="color: #00bfff;">@Assiw8（点击跳转）</a></p>
+            
             <p style="color: #ffffff;">
                 负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
             </p>
-            <p style="color: #ffffff;">备用QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumberBackup" @click="copyQQ('924160568')">924160568</span></p>
-
+            <p style="color: #ffffff;">
+                有意向赶快联系我吧<span style="color: #ff4500;">一单一结，不拖单压单 既做既结</span>
+            </p>
             <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight">{{ currentDate }}</span></p>
         </div>
     </div>
