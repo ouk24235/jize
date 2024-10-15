@@ -26,7 +26,7 @@
       <p>负责人QQ；<span class="contact" @click="copyQQ('3851456810')">3851456810</span></p>
       <p>备用QQ；<span class="contact" @click="copyQQ('924160568')">924160568</span></p>
       <p>有意向请赶快联系我吧，<a style="color: red;">一单一结，不压单拖单，即做即结</a></p>
-      <p>最新确认时间：最新确认时间：<span style="color: red;">{{ currentDate }}</span></p>
+      <p>最新确认时间：最新确认时间2：<span style="color: red;">{{ currentDate }}</span></p>
     </div>
         
         
