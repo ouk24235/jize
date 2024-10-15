@@ -23,11 +23,15 @@
         <li style="color: #ffffff;">简单粗暴 没有理由 单纯扩列</li>
         <li style="color: #ffffff;">(邀请朋友做单、俩人每人2块)</li>
       </ul>
-      <h3 style="color: #ff4500;">👦‍联系我们</h3>
-      <p style="color: #ffffff;">该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank" style="color: #1e90ff;">@Assiw8（点击跳转）</a></p>
-      <p style="color: #ffffff;">QQ；<span class="contact" @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 </span></p>
-      <p style="color: #ffffff;">备用QQ；<span class="contact" @click="copyQQ('924160568')" style="color: #ff4500;">924160568</span></p>
-      <p style="color: #ff4500;">最新确认时间：<span id="currentDate" style="color: red;"></span></p>
+      <h3 style="color: #ffcc00;">👦‍联系我们</h3>
+            
+            <p style="color: #ffffff;">
+                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
+            </p>
+            <p style="color: #ffffff;">
+                有意向赶快联系我吧<span style="color: #ff4500;">一单一结，不拖单压单 既做既结</span>
+            </p>
+            <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight">{{ currentDate }}</span></p>
     </div>
         
         
@@ -130,9 +134,9 @@ p {
   // 设置元素为相对定位
   position: relative;
   // 设置宽度为95%
-  width: 50%;
+  width: 80%;
   // 设置高度为95%
-  height: 60%;
+  height: 80%;
   // 设置背景为透明白色
   background: rgba(255, 255, 255, 0.0);
   // 添加模糊效果

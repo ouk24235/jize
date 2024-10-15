@@ -21,12 +21,15 @@
         <li>联系商家拿资料，商家会给你（快手号、抖音号）的主页，在快手或抖音搜索，关注后截图给商家即可</li>
         <li>(邀请朋友做单、一个人6.18)</li>
       </ul>
-      <h3>👦‍联系我们</h3>
-      <p>该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank" style="color: #1e90ff;">@Assiw8（点击跳转）</a></p>
-      <p>负责人QQ；<span class="contact" @click="copyQQ('3851456810')">3851456810</span></p>
-      <p>备用QQ；<span class="contact" @click="copyQQ('924160568')">924160568</span></p>
-      <p>有意向请赶快联系我吧，<a style="color: red;">一单一结，不压单拖单，即做即结</a></p>
-      <p>最新确认时间：最新确认时间2：<span style="color: red;">{{ currentDate }}</span></p>
+      <h3 style="color: #ffcc00;">👦‍联系我们</h3>
+            
+            <p style="color: #ffffff;">
+                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
+            </p>
+            <p style="color: #ffffff;">
+                有意向赶快联系我吧<span style="color: #ff4500;">一单一结，不拖单压单 既做既结</span>
+            </p>
+            <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight">{{ currentDate }}</span></p>
     </div>
         
         
@@ -126,9 +129,9 @@ p {
   // 设置元素为相对定位
   position: relative;
   // 设置宽度为95%
-  width: 50%;
+  width: 80%;
   // 设置高度为95%
-  height: 60%;
+  height: 80%;
   // 设置背景为透明白色
   background: rgba(255, 255, 255, 0.0);
   // 添加模糊效果

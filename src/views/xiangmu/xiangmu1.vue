@@ -16,7 +16,7 @@
         <div class="link-all">
           <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="loadComponent(link.link)">
             <i :class="link.icon"></i>
-            <span :class="link.name === '租赁反佣金' ? 'yellow-text' : (link.name === '快手抖音关注单' || link.name === '视频代发' ? 'red-text' : '')">{{ link.name }}</span> <!-- 条件渲染 -->
+            <span :class="link.name === '租赁反佣金(hot🔥)' ? 'yellow-text' : (link.name === '快手抖音关注单' || link.name === '视频代发' ? 'red-text' : '')">{{ link.name }}</span> <!-- 条件渲染 -->
             <div class="description">{{ link.description }}</div>
           </div>
         </div>
@@ -57,6 +57,12 @@ defineExpose({ show });
 
 // 定义 JSON 数据
 const xinxiLinks = ref([
+{
+  name: "租赁反佣金(hot🔥)", // 加红
+  icon: "i-icon-new", // 假设有一个新的图标类
+  link: "zulin", // 新增链接
+  description: "一单利润300-1000" // 新增介绍
+},
 
 {
   name: "视频代发",
@@ -82,12 +88,7 @@ const xinxiLinks = ref([
   link: "usdt", // 新增链接
   description: "（利润较高 但门槛高 且需要本本金）" // 新增介绍
 },
-{
-  name: "租赁反佣金", // 加红
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "zulin", // 新增链接
-  description: "一单佣金200-800不等" // 新增介绍
-},
+
 {
   name: "微信辅助注册",
   icon: "i-icon-new", // 假设有一个新的图标类
@@ -121,15 +122,15 @@ if (link === 'vxzhuc') {
 <style lang="scss" scoped>
 
 .red-text {
-  color: red;
+  color: rgba(255, 0, 0, 0.562);
   font-weight: bold; // 加粗
-  font-size: 1.3em; // 字体放大1.3倍
+  font-size: 1.1em; // 字体放大1.3倍
 
 }
 .yellow-text {
-  color: rgb(0, 255, 26);
+  color: rgb(255, 64, 0);
   font-weight: bold; // 加粗
-  font-size: 1.3em; // 字体放大1.3倍
+  font-size: 1.2em; // 字体放大1.3倍
 
 }
 .overlay {
