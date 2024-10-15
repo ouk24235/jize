@@ -1,27 +1,46 @@
 # Dev 分支推送部署预览
-## 仅部署 Win 端
+## 仅部署 Win 端和 PHP 环境
 name: Build Dev
 
 on:
   push:
     branches:
       - dev
-      - master
 
 jobs:
   release:
-    name: Build Website
+    name: Build and Deploy
     runs-on: windows-latest
 
     steps:
       # 检出 Git 仓库
       - name: Check out git repository
         uses: actions/checkout@v4.1.1
+
+      # 缓存 Composer 依赖
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      # 缓存 Node.js 依赖
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       # 安装 Node.js
       - name: Install Node.js
         uses: actions/setup-node@v4.0.0
         with:
           node-version: "18.x"
+
       # 复制环境变量文件
       - name: Copy .env.example
         run: |
@@ -30,23 +49,66 @@ jobs:
           } else {
             Write-Host ".env file already exists. Skipping the copy step."
           }
-      # 安装项目依赖
-      - name: Install Dependencies
+
+      # 安装 Node.js 项目依赖
+      - name: Install Node Dependencies
         run: npm install
-      # 构建程序
+
+      # 运行 Node.js 测试（可选）
+      - name: Run Node Tests
+        run: npm test
+
+      # 构建 Node.js 程序
       - name: Build Website
         run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      # 上传构建产物到 S3（仅在 master 分支）
+
+      # 设置 PHP 环境
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0' # 根据您的需求选择 PHP 版本
+          extensions: mbstring, intl, pdo_mysql # 根据您的项目需要添加扩展
+          ini-values: post_max_size=256M, upload_max_filesize=256M
+          coverage: none
+
+      # 安装 PHP 依赖
+      - name: Install PHP Dependencies
+        run: composer install --no-dev --prefer-dist
+
+      # 运行 PHP 测试（可选）
+      - name: Run PHP Tests
+        run: php vendor/bin/phpunit
+
+      # 构建 PHP 项目（如果有构建步骤）
+      - name: Build PHP Project
+        run: |
+          # 如果有特定的构建步骤，请在这里添加
+          echo "No build steps for PHP project."
+
+      # 上传构建产物到 S3
       - name: Configure AWS credentials
-        if: github.ref == 'refs/heads/master'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync to S3
-        if: github.ref == 'refs/heads/master'
+      - name: Sync Artifacts to S3
         run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }}/path/to/artifacts --delete
+
+      # 部署 PHP 文件到服务器（例如，通过 SSH）
+      - name: Deploy PHP to Server
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            cd /path/to/your/php/application
+            git pull origin dev
+            composer install --no-dev --prefer-dist
+            # 运行任何必要的数据库迁移或其他脚本
+            php artisan migrate --force # 示例：Laravel 框架
