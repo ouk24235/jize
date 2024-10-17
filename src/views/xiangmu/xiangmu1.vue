@@ -165,7 +165,7 @@ const loadComponent = (link) => {
 
 // 使用 onMounted 来获取 JSON 数据
 onMounted(() => {
-  axios.get('/api/plus/json/push.json')
+  axios.get('https://ziyuan.assiw.xyz/dw/json/push.php')
     .then(response => {
       console.log('获取的数据：', response.data);
       xianbaoLinks.value = response.data.map(item => ({
@@ -183,7 +183,7 @@ onMounted(() => {
 });
 
 onMounted(() => {
-  axios.get('/api/plus/json/rank/guesslike.json')
+  axios.get('https://ziyuan.assiw.xyz/dw/json/guesslike.php')
     .then(response => {
       console.log('获取的数据：', response.data);
       xianbaoLinkss.value = response.data.map(item => ({

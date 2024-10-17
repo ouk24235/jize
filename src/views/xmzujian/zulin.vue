@@ -13,11 +13,11 @@
 
         <div class="assiw-container">
             <h2 style="color: #ff4500; font-weight: bold;">🔥租赁项目🔥</h2>
-            <p style="color: #ff4500; font-weight: bold;">🔥 只需两步（下载APP+免押租赁指定商品）</p>
-            <p style="color: #ff4500; font-weight: bold;">🔥 无需垫付及预支资金</p>
-            <p style="color: #ff4500; font-weight: bold;">🔥 每单只需要5-15分钟，佣金200+</p>
-            <p style="color: #ff4500; font-weight: bold;">🔥 在家有一部手机就能做</p>
-            <p style="color: #ff4500; font-weight: bold;">🔥 有意向联系请底部QQ</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 只需两步（下载APP+免押租赁指定商品）</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 无需垫付及预支资金</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 每单只需要5-15分钟，佣金200+</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 在家有一部手机就能做</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 有意向联系请底部QQ</p>
 
             <h3 style="color: #ffcc00;">❓ 我们如何获利？</h3>
             <ul>
@@ -47,18 +47,18 @@
 
             <h3 style="color: #ffcc00; font-weight: bold;">🧧 佣金结算模式</h3>
             <ul>
-                <li>用户：<span style="color: #ff0000; font-weight: bold;">提供成功租赁订单的截图</span>给上级，把<span style="color: #ff0000; font-weight: bold;">收款方式</span>和<span style="color: #ff0000; font-weight: bold;">订单截图</span>发给上级</li>
-                <li>上级会现场结算，请<span style="color: #ff0000; font-weight: bold;">提供自己的收款方式，防止诈骗人员。</span></li>
+                <li>用户：<span style="color: #20B2AA; font-weight: bold;">提供成功租赁订单的截图</span>给上级，把<span style="color: #20B2AA; font-weight: bold;">收款方式</span>和<span style="color: #20B2AA; font-weight: bold;">订单截图</span>发给上级</li>
+                <li>上级会现场结算，请<span style="color: #20B2AA; font-weight: bold;">提供自己的收款方式，防止诈骗人员。</span></li>
                 <li><span style="color: #ffcc00; font-weight: bold;">结账支持：</span><span style="color: #00ff00; font-weight: bold;">支付宝，微信，口令或者扫码。</span></li>
-                <li><span style="color: #ff0000; font-weight: bold;">成功收到打款前后请保持联系方式通畅</span>，避免找不到人，浪费我们的时间。</li>
+                <li><span style="color: #20B2AA; font-weight: bold;">成功收到打款前后请保持联系方式通畅</span>，避免找不到人，浪费我们的时间。</li>
             </ul>
 
             <h3 style="color: #ffcc00; font-weight: bold;">👨‍👨‍👦‍👦 面向客户群体</h3>
             <ul>
-                <li style="color: #00ff00; font-weight: bold;">目前我们优先接受信用良好的用户订单，以确保合作顺利进行。</li>
-                <li style="color: #00ff00; font-weight: bold;">客户年龄区间在20-60之间，能熟练操作手机的。</li>
-                <li style="color: #00ff00; font-weight: bold;">杜绝涉黑涉恶人员，防止卷款跑路。</li>
-                <li style="color: #00ff00; font-weight: bold;">请未成年人不要参与网络活动</li>
+                <li style="color: #20B2AA; font-weight: bold;">目前我们优先接受信用良好的用户订单，以确保合作顺利进行。</li>
+                <li style="color: #20B2AA; font-weight: bold;">客户年龄区间在18-60之间，能熟练操作手机的。</li>
+                <li style="color: #20B2AA; font-weight: bold;">杜绝涉黑涉恶人员，防止卷款跑路。</li>
+                <li style="color: #20B2AA; font-weight: bold;">请未成年人不要参与网络活动</li>
             </ul>
 
             <h3 style="color: #ffcc00; font-weight: bold;">👦‍联系我们</h3>
@@ -72,6 +72,17 @@
             <p style="color: #ffffff; font-weight: bold;">
                 有意向赶快联系我吧</p><p><span style="color: #ff4500; font-weight: bold;">一单一结，不拖单压单 既做既结</span>
             </p>
+            <h2 style="color: #FDE401;">常见问题（做单必看）</h2>
+          <li><span style="color: #55D32D;"> 问</span>：没有Steam账号，怎么办。</li>
+          <li>答：商家会提供账号，请联系客服</li>
+          <li><span style="color: #55D32D;"> 问</span>：担心归还不上怎么办？</li>
+          <li>答：打开APP—租赁记录—归还—确认即可。</li>
+          <li><span style="color: #55D32D;"> 问</span>：会不会对芝麻分有影响。</li>
+          <li>答：不会，正常归还</li>
+          <li><span style="color: #55D32D;"> 问</span>：这个会有什么风险吗？</li>
+          <li>答：没有风险</li>
+          <li><span style="color: #55D32D;"> 问</span>：租完后什么时候归还呢。</li>
+          <li>答：订单到期时即可归还</li>
             <p style="color: #ffffff; font-weight: bold;">最新确认时间：<span id="currentDate" style="color: red;">{{ currentDate }}</span></p>
         </div>
     </div>
@@ -196,7 +207,7 @@ li {
 }
 
 .highlight {
-    color: #ff4500;
+    color: #ADFF2F;
     font-weight: bold;
     text-align: left; /* 左对齐 */
     margin-left: 40px; /* 左边距40px */
