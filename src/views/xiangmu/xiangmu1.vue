@@ -9,10 +9,13 @@
         </svg>
       </span>
       
-
       <!-- 新增内容 -->
       <div class="more-content">
-        <h2 class="top-title">项目列表</h2> <!-- 置顶标题 -->
+        <h2 class="top-title">🔥项目列表🔥</h2> <!-- 置顶标题 -->
+        
+        <!-- 新增子标题 -->
+        <h3 class="sub-title">🔥做单类🔥</h3> <!-- 子标题 -->
+        
         <div class="link-all">
           <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="loadComponent(link.link)">
             <i :class="link.icon"></i>
@@ -20,6 +23,22 @@
             <div class="description">{{ link.description }}</div>
           </div>
         </div>
+        
+        <!-- 修改部分，使用 JSON 数据填充 -->
+        <h3 class="sub-title">🔥线报类🔥</h3> <!-- 子标题 -->
+        
+        <div class="link-all">
+  <div
+    class="item"
+    v-for="news in xianbaoLinks"
+    :key="news.id"
+    @click="news.link ? loadComponent(news.link) : openLink(news.url)"
+  >
+    <span class="name">{{ news.title }}</span>
+    <div class="description">{{ news.content }}</div>
+    <div class="datetime">{{ news.datetime }}</div>
+  </div>
+</div>
       </div>
     </div>
   </div>  
@@ -27,29 +46,30 @@
 </template>
 
 <script setup>
-import { ref, defineEmits, defineExpose } from 'vue';
-
+import { ref, defineEmits, defineExpose, onMounted } from 'vue';
+import axios from 'axios';
 
 import daifa from '@/views/xmzujian/daifa.vue'; // 新增导入
 import douyin from '@/views/xmzujian/douyin.vue'; // 新增导入
 import qqkuolie from '@/views/xmzujian/qqkuolie.vue'; // 新增导入
-import usdt from '@//views/xmzujian/usdt.vue'; // 新增导入
+import usdt from '@/views/xmzujian/usdt.vue'; // 新增导入
 import zulin from '@/views/xmzujian/zulin.vue'; // 新增导入
 import vxzhuc from '@/views/xmzujian/vxzhuc.vue'; // 新增导入
 
 const emit = defineEmits(['close']);
 const isVisible = ref(true);
 const currentComponent = ref(null);
+const xianbaoLinks = ref([]);
 
 const close = () => {
-isVisible.value = false;
-emit('close');
+  isVisible.value = false;
+  emit('close');
 };
 
 // 新增方法用于重新显示内容
 const show = () => {
-isVisible.value = true;
-currentComponent.value = null; // 清除当前组件
+  isVisible.value = true;
+  currentComponent.value = null; // 清除当前组件
 };
 
 // 公开 show 方法
@@ -57,65 +77,100 @@ defineExpose({ show });
 
 // 定义 JSON 数据
 const xinxiLinks = ref([
-{
-  name: "租赁反佣金(hot🔥)", // 加红
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "zulin", // 新增链接
-  description: "一单利润300-1000" // 新增介绍
-},
-
-{
-  name: "视频代发",
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "daifa", // 新增链接
-  description: "一个平台5-10元" // 新增介绍
-},
-{
-  name: "快手抖音关注单",
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "douyin", // 新增链接
-  description: "无任何收费，一个关注1-2元" // 新增介绍
-},
-{
-  name: "QQ扩列",
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "qqkuolie", // 新增链接
-  description: "1个人1-5块" // 新增介绍
-},
-{
-  name: "USDT兑换",
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "usdt", // 新增链接
-  description: "（利润较高 但门槛高 且需要本本金）" // 新增介绍
-},
-
-{
-  name: "微信辅助注册",
-  icon: "i-icon-new", // 假设有一个新的图标类
-  link: "vxzhuc", // 新增链接
-  description: "微信辅助注册-一单12" // 新增介绍
-},
+  {
+    name: "租赁反佣金(hot🔥)", // 加红
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "zulin", // 新增链接
+    description: "一单利润300-1000" // 新增介绍
+  },
+  {
+    name: "视频代发",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "daifa", // 新增链接
+    description: "一个平台5-10元" // 新增介绍
+  },
+  {
+    name: "快手抖音关注单",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "douyin", // 新增链接
+    description: "无任何收费，一个关注1-2元" // 新增介绍
+  },
+  {
+    name: "QQ扩列",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "qqkuolie", // 新增链接
+    description: "1个人1-5块" // 新增介绍
+  },
+  {
+    name: "USDT兑换",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "usdt", // 新增链接
+    description: "（利润较高 但门槛高 且需要本金）" // 新增介绍
+  },
+  {
+    name: "微信辅助注册",
+    icon: "i-icon-new", // 假设有一个新的图标类
+    link: "vxzhuc", // 新增链接
+    description: "微信辅助注册-一单12" // 新增介绍
+  },
 ]);
 
 // 引用 .vue 文件
 const loadComponent = (link) => {
-isVisible.value = false; // 隐藏当前页面
-if (link === 'vxzhuc') {
-  currentComponent.value = vxzhuc;
-}
- else if (link === 'daifa') { // 新增条件
-  currentComponent.value = daifa; // 新增组件
-} else if (link === 'douyin') { // 新增条件
-  currentComponent.value = douyin; // 新增组件
-} else if (link === 'qqkuolie') { // 新增条件
-  currentComponent.value = qqkuolie; // 新增组件
-} else if (link === 'usdt') { // 新增条件
-  currentComponent.value = usdt; // 新增组件
-} else if (link === 'zulin') { // 新增条件
-  currentComponent.value = zulin; // 新增组件
-} 
+  isVisible.value = false; // 隐藏当前页面
+  switch (link) {
+    case 'vxzhuc':
+      currentComponent.value = vxzhuc;
+      break;
+    case 'daifa':
+      currentComponent.value = daifa;
+      break;
+    case 'douyin':
+      currentComponent.value = douyin;
+      break;
+    case 'qqkuolie':
+      currentComponent.value = qqkuolie;
+      break;
+    case 'usdt':
+      currentComponent.value = usdt;
+      break;
+    case 'zulin':
+      currentComponent.value = zulin;
+      break;
+    default:
+      console.error('无法加载对应组件:', link);
+      isVisible.value = true; // 如果无法找到组件，保持原页面显示
+  }
+};
 
+// 使用 onMounted 来获取 JSON 数据
+onMounted(() => {
+  axios.get('http://new.ixbk.net/plus/json/push.json')
+    .then(response => {
+      console.log('获取的数据：', response.data); // 添加这行
+      xianbaoLinks.value = response.data.map(item => ({
+        id: item.id,
+        title: item.title,
+        content: item.content,
+        datetime: item.datetime,
+        url: 'http://new.ixbk.net' + item.url,
+        link: item.link
+      }));
+    })
+    .catch(error => {
+      console.error('获取线报数据失败:', error);
+    });
+});
 
+// 打开链接
+const openLink = (url) => {
+  window.open(url, '_blank');
+};
+
+// 按钮点击事件 - 示例
+const handleButtonClick = () => {
+  console.log('按钮已点击');
+  // 这里可以添加其他需要处理的逻辑
 };
 </script>
 
@@ -125,197 +180,211 @@ if (link === 'vxzhuc') {
   color: rgba(255, 0, 0, 0.562);
   font-weight: bold; // 加粗
   font-size: 1.1em; // 字体放大1.3倍
-
 }
+
 .yellow-text {
   color: rgb(255, 64, 0);
   font-weight: bold; // 加粗
   font-size: 1.2em; // 字体放大1.3倍
-
 }
+
 .overlay {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .set {
-position: relative;
-width: 55%;
-height: 80%;
-background: rgba(255, 255, 255, 0.0); /* 半透明背景 */
-backdrop-filter: blur(10px); /* 模糊效果 */
-border-radius: 6px;
-padding: 40px;
-display: flex;
-flex-direction: column;
-justify-content: flex-start; /* 置顶内容 */
-align-items: center;
-
-@media (max-width: 768px) {
-  width: 90%;
-  height: 90%;
-  padding: 20px;
-}
-
-.close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  &:active {
-    transform: scale(1);
-  }
-}
-
-.content {
-  width: 100%;
-  height: calc(100% - 40px); /* 减去 padding 的高度 */
+  position: relative;
+  width: 55%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.0); /* 半透明背景 */
+  backdrop-filter: blur(10px); /* 模糊效果 */
+  border-radius: 6px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* 置顶内容 */
-  padding-top: 10px; /* 添加一些顶部填充 */
-  overflow-y: auto; /* 允许内容滚动 */
-  color: #fff; /* 文字颜色改为白色 */
-  text-align: left; /* 左对齐文字 */
-}
+  align-items: center;
 
-.content h2, .content h3 {
-  color: #ff4500; /* 标题颜色改为橙色 */
-}
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+  }
 
-.content p, .content ul, .content li {
-  margin: 5px 0;
-}
+  .close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
 
-.content a {
-  color: #ff4500; /* 链接文字颜色改为橙色 */
-  text-decoration: none;
-}
+    &:hover {
+      transform: scale(1.2);
+    }
 
-.content a:hover {
-  text-decoration: underline;
-}
+    &:active {
+      transform: scale(1);
+    }
+  }
 
-/* 自定义滚动条样式 */
-.content::-webkit-scrollbar {
-  width: 3px; /* 滚动条宽度 */
-}
+  .content {
+    width: 100%;
+    height: calc(100% - 40px); /* 减去 padding 的高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 置顶内容 */
+    padding-top: 10px; /* 添加一些顶部填充 */
+    overflow-y: auto; /* 允许内容滚动 */
+    color: #fff; /* 文字颜色改为白色 */
+    text-align: left; /* 左对齐文字 */
+  }
 
-.content::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); /* 滚动条轨道颜色 */  
-  border-radius: 5px; /* 滚动条轨道圆角 */
-  margin-top: 10px; /* 滚动条轨道上边距 */
-}
+  .content h2, .content h3 {
+    color: #ff4500; /* 标题颜色改为橙色 */
+  }
 
-.content::-webkit-scrollbar-thumb {   
-  background: rgba(185, 185, 185, 0.8); /* 滚动条滑块颜色 */
-  border-radius: 4px; /* 滚动条滑块圆角 */
-  min-height: 30px; /* 滚动条滑块最小高度 */
-}
+  .content p, .content ul, .content li {
+    margin: 5px 0;
+  }
 
-.content::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 69, 0, 1); /* 滚动条滑块悬停颜色 */
-}
+  .content a {
+    color: #ff4500; /* 链接文字颜色改为橙色 */
+    text-decoration: none;
+  }
+
+  .content a:hover {
+    text-decoration: underline;
+  }
+
+  /* 自定义滚动条样式 */
+  .content::-webkit-scrollbar {
+    width: 3px; /* 滚动条宽度 */
+  }
+
+  .content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* 滚动条轨道颜色 */  
+    border-radius: 5px; /* 滚动条轨道圆角 */
+    margin-top: 10px; /* 滚动条轨道上边距 */
+  }
+
+  .content::-webkit-scrollbar-thumb {   
+    background: rgba(185, 185, 185, 0.8); /* 滚动条滑块颜色 */
+    border-radius: 4px; /* 滚动条滑块圆角 */
+    min-height: 30px; /* 滚动条滑块最小高度 */
+  }
+
+  .content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 69, 0, 1); /* 滚动条滑块悬停颜色 */
+  }
 }
 
 @media (max-width: 480px) {
-.set {
-  width: 90%;
-  height: 95%;
-  padding: 10px;
-}
+  .set {
+    width: 90%;
+    height: 95%;
+    padding: 10px;
+  }
 
-.content {
-  padding-top: 5px;
-}
+  .content {
+    padding-top: 5px;
+  }
 
-.content h2, .content h3 {
-  font-size: 1.2rem; /* 调整标题字体大小 */
-}
+  .content h2, .content h3 {
+    font-size: 1.2rem; /* 调整标题字体大小 */
+  }
 
-.content p, .content ul, .content li {
-  font-size: 0.9rem; /* 调整段落和列表字体大小 */
-}
+  .content p, .content ul, .content li {
+    font-size: 0.9rem; /* 调整段落和列表字体大小 */
+  }
 }
 
 /* 新增样式 */
 .more-content {
-display: flex;
-flex-direction: column; /* 垂直方向排列 */
-align-items: center; /* 水平居中 */
-justify-content: flex-start; /* 顶部对齐 */
-margin-top: 20px;
-width: 100%;
-height: 100%;
+  display: flex;
+  flex-direction: column; /* 垂直方向排列 */
+  align-items: center; /* 水平居中 */
+  justify-content: flex-start; /* 顶部对齐 */
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .link-all {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 10px;
-margin-top: 30px; /* 增加顶部间距 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px; /* 增加顶部间距 */
 }
 
 .item {
-height: 100px; /* 项目高度 */
-width: 266px; /* 项目宽度 */
-display: flex; /* 使用flex布局 */
-align-items: center; /* 垂直居中 */
-flex-direction: column; /* 垂直方向排列 */
-justify-content: center; /* 水平居中 */
-padding: 10px; /* 内边距 */
-background: rgba(0, 0, 0, 0.4); /* 背景颜色和透明度 */
-border-radius: 6px; /* 边框圆角 */
-cursor: pointer; /* 鼠标指针样式 */
-transition: transform 0.3s, background 0.3s; /* 过渡效果 */
+  height: 100px; /* 项目高度 */
+  width: 266px; /* 项目宽度 */
+  display: flex; /* 使用flex布局 */
+  align-items: center; /* 垂直居中 */
+  flex-direction: column; /* 垂直方向排列 */
+  justify-content: center; /* 水平居中 */
+  padding: 10px; /* 内边距 */
+  background: rgba(0, 0, 0, 0.4); /* 背景颜色和透明度 */
+  border-radius: 6px; /* 边框圆角 */
+  cursor: pointer; /* 鼠标指针样式 */
+  transition: transform 0.3s, background 0.3s; /* 过渡效果 */
 
-&:hover {
-  transform: scale(1.02); /* 鼠标悬停时放大 */
-  background: rgba(0, 0, 0, 0.6); /* 鼠标悬停时背景颜色和透明度 */
-}
+  &:hover {
+    transform: scale(1.02); /* 鼠标悬停时放大 */
+    background: rgba(0, 0, 0, 0.6); /* 鼠标悬停时背景颜色和透明度 */
+  }
 
-&:active {
-  transform: scale(1); /* 鼠标按下时恢复原状 */
-}
+  &:active {
+    transform: scale(1); /* 鼠标按下时恢复原状 */
+  }
 
-@media (max-width: 768px) {
-  width: 80%; /* 当手机访问时宽度为百分之48 */
-}
+  @media (max-width: 768px) {
+    width: 80%; /* 当手机访问时宽度为百分之48 */
+  }
 
-.name {
-  font-size: 1.1rem; /* 名称字体大小 */
-  margin-top: 0px; /* 名称上边距 */
-  text-align: center; /* 名称居中对齐 */
-}
+  .name {
+    font-size: 1.1rem; /* 名称字体大小 */
+    margin-top: 0px; /* 名称上边距 */
+    text-align: center; /* 名称居中对齐 */
+  }
 
-.description {
-  font-size: 0.9rem; /* 介绍字体大小 */
-  margin-top: 5px; /* 介绍上边距 */
-  text-align: center; /* 介绍居中对齐 */
-  color: #ff0000; /* 介绍文字颜色 */
-}
+  .description {
+    font-size: 0.9rem; /* 介绍字体大小 */
+    margin-top: 5px; /* 介绍上边距 */
+    text-align: center; /* 介绍居中对齐 */
+    color: #ff0000; /* 介绍文字颜色 */
+  }
+
 }
 
 .top-title {
-position: absolute;
-top: 20px;
-font-size: 1.5rem;
-color: red;
+  position: absolute;
+  top: 20px;
+  font-size: 1.5rem;
+  color: red;
+}
+
+.sub-title {
+  text-align: left; /* 左对齐 */
+  color: rgb(13, 255, 0); /* 红色字体 */
+  font-size: 1.2rem; /* 字体大小 */
+  margin: 5px; /* 上下间距 */
+}
+@media only screen and (max-width: 768px) {
+  .sub-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 </style>

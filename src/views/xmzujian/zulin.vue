@@ -12,71 +12,67 @@
       <div>
 
         <div class="assiw-container">
-            <h2 style="color: #ff4500;">🔥租赁项目</h2>
-            <p style="color: #ff4500;">🔥 本篇为租赁项目介绍</p>
-            <p style="color: #ff4500;">🔥 0成本 一手项目 利润给足</p>
-            <p style="color: #ff4500;">🔥 每单可反佣金300-800</p>
-            <p style="color: #ff4500;">🔥 在家有一部手机就能做</p>
+            <h2 style="color: #ff4500; font-weight: bold;">🔥租赁项目🔥</h2>
+            <p style="color: #ff4500; font-weight: bold;">🔥 只需两步（下载APP+免押租赁指定商品）</p>
+            <p style="color: #ff4500; font-weight: bold;">🔥 无需垫付及预支资金</p>
+            <p style="color: #ff4500; font-weight: bold;">🔥 每单只需要5-15分钟，佣金200+</p>
+            <p style="color: #ff4500; font-weight: bold;">🔥 在家有一部手机就能做</p>
+            <p style="color: #ff4500; font-weight: bold;">🔥 有意向联系请底部QQ</p>
 
-            <h4 class="highlight">项目简介👇:</h4>
-            <ul>
-                <li style="color: #ffffff;">1. 提供通过租赁商品获取佣金的在家兼职机会，无需资金投入，利润丰厚。只需一部手机，完成下单即可获得300-800元佣金。</li>
-                <li style="color: #ffffff;">2. 项目旨在提升店铺信誉，包括增加订单数量、交易金额及好评率。</li>
-                <li style="color: #ffffff;">3. 支持支付宝和微信结算，单笔订单平均佣金为300-800元。</li>
-                <li style="color: #ffffff;">4. 800佣金的订单（<span style="color: #ffcc00;">需养号，做成常驻客户，以符合条件</span>）。</li>
-                <li style="color: #ffffff;">5. 目前我们优先接受<span style="color: #ffcc00;">高信用</span>用户，严禁涉黑涉恶人员参与。联系方式包括QQ和微信。</li>
-            </ul>
-            <h4 class="highlight">正文👇：</h4>
             <h3 style="color: #ffcc00;">❓ 我们如何获利？</h3>
             <ul>
                 <li style="color: #ffffff;">根据商家做店铺运营店铺需要信誉分考核需求，刷三类数据：</li>
-                <li class="highlight">店铺订单数</li>
-                <li class="highlight">店铺订单质量</li>
-                <li class="highlight">店铺好评率</li>
+                <li class="highlight" style="font-weight: bold;">店铺订单数</li>
+                <li class="highlight" style="font-weight: bold;">店铺订单质量</li>
+                <li class="highlight" style="font-weight: bold;">店铺好评率</li>
             </ul>
 
-            <h3 style="color: #ffcc00;">💵 如何获得佣金</h3>
+            <h3 style="color: #ffcc00; font-weight: bold;">💵 如何获得佣金</h3>
             <ul>
-                <li style="color: #ffffff;">我们在多个店铺发布多个商品。</li>
-                <li style="color: #ffffff;">做单人员选择客服指定商品下单成功租赁。</li>
-                <li style="color: #ffffff;">提供订单截图给负责人员结算佣金。</li>
-                <li style="color: #ffffff;">具体操作流程请联系下方客服，下方客服指导操作流程</li>
+                <li>我们在<span style="color: #00ff00; font-weight: bold;">合作店铺以及自营店铺</span>上架商品。</li>
+                <li>做单人员选择<span style="color: #00ff00; font-weight: bold;">指定商品进行租赁。</span></li>
+                <li>提供<span style="color: #00ff00; font-weight: bold;">订单截图给负责人以结算佣金。</span></li>
+                <li>具体<span style="color: #00ff00; font-weight: bold;">操作流程请联系下方客服获取。</span></li>
             </ul>
 
-            <h3 style="color: #ffcc00;">💡 用户如何操作</h3>
+            <h3 style="color: #ffcc00; font-weight: bold;">💡 用户如何操作</h3>
             <ul>
-                <li style="color: #ffffff;">为确保顺利参与，您的芝麻分需在<span style="color: #ffcc00;">600分</span>以上；若低于600分，则无法进行操作流程。</li>
-                <li style="color: #ffffff;">下载并登录APP。</li>
-                <li style="color: #ffffff;">用户自行登入APP</li>
-                <li style="color: #ffffff;">客服选择指定商品。</li>
-                <li style="color: #ffffff;">用户选择下单即可，中途无任何费用，平均一单5-20分钟可以做完。</li>
+                <li>为确保顺利参与，您的芝麻分需在<span style="color: #00ff00; font-weight: bold;">600分</span>以上；若低于<span style="color: #00ff00; font-weight: bold;">600分</span>，则无法进行操作流程。</li>
+                <li>下载APP并自行<span style="color: #00ff00; font-weight: bold;">注册登入</span>。</li>
+                <li>选择客服<span style="color: #00ff00; font-weight: bold;">指定商品租赁</span></li>
+                <li>用户成功租赁后<span style="color: #00ff00; font-weight: bold;">保存订单截图</span></li>
+                <li>将保存的<span style="color: #00ff00; font-weight: bold;">订单截图发送给客服结账</span></li>
+                <li>平均一单<span style="color: #00ff00; font-weight: bold;">5-20分钟</span>可以做完。</li>
             </ul>
 
-            <h3 style="color: #ffcc00;">🧧 结算体系</h3>
+            <h3 style="color: #ffcc00; font-weight: bold;">🧧 佣金结算模式</h3>
             <ul>
-                <li style="color: #ffffff;">用户：提供成功租赁订单的截图给上级，把收款方式和订单截图发给上级后。</li>
-                <li style="color: #ffffff;">上级会现场结算，请提供自己的收款方式，防止诈骗人员。</li>
-                <li><span style="color: #ffcc00;">结账支持：</span>支付宝，微信，口令或者扫码。</li>
-                <li style="color: #ffffff;">成功收到打款前后请保持联系方式通畅，避免找不到人，浪费我们的时间。</li>
+                <li>用户：<span style="color: #ff0000; font-weight: bold;">提供成功租赁订单的截图</span>给上级，把<span style="color: #ff0000; font-weight: bold;">收款方式</span>和<span style="color: #ff0000; font-weight: bold;">订单截图</span>发给上级</li>
+                <li>上级会现场结算，请<span style="color: #ff0000; font-weight: bold;">提供自己的收款方式，防止诈骗人员。</span></li>
+                <li><span style="color: #ffcc00; font-weight: bold;">结账支持：</span><span style="color: #00ff00; font-weight: bold;">支付宝，微信，口令或者扫码。</span></li>
+                <li><span style="color: #ff0000; font-weight: bold;">成功收到打款前后请保持联系方式通畅</span>，避免找不到人，浪费我们的时间。</li>
             </ul>
 
-            <h3 style="color: #ffcc00;">👨‍👨‍👦‍👦 客户群体</h3>
+            <h3 style="color: #ffcc00; font-weight: bold;">👨‍👨‍👦‍👦 面向客户群体</h3>
             <ul>
-                <li style="color: #ffffff;">目前我们优先接受信用良好的用户订单，以确保合作顺利进行。</li>
-                <li style="color: #ffffff;">客户年龄区间在20-60之间，能熟练操作手机的。</li>
-                <li style="color: #ffffff;">杜绝涉黑涉恶人员，防止卷款跑路。</li>
-                <li style="color: #ffffff;">请未成年人不要参与网络活动</li>
+                <li style="color: #00ff00; font-weight: bold;">目前我们优先接受信用良好的用户订单，以确保合作顺利进行。</li>
+                <li style="color: #00ff00; font-weight: bold;">客户年龄区间在20-60之间，能熟练操作手机的。</li>
+                <li style="color: #00ff00; font-weight: bold;">杜绝涉黑涉恶人员，防止卷款跑路。</li>
+                <li style="color: #00ff00; font-weight: bold;">请未成年人不要参与网络活动</li>
             </ul>
 
-            <h3 style="color: #ffcc00;">👦‍联系我们</h3>
-            
-            <p style="color: #ffffff;">
-                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
+            <h3 style="color: #ffcc00; font-weight: bold;">👦‍联系我们</h3>
+            <p style="color: #00ff00; font-weight: bold;">
+                目前正在紧急招募代理，名额有限，请尽快联系
             </p>
-            <p style="color: #ffffff;">
-                有意向赶快联系我吧<span style="color: #ff4500;">一单一结，不拖单压单 既做既结</span>
+            <p>
+                负责人QQ；</p>
+                <p><span style="color: #ff4500; cursor: pointer; font-weight: bold;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
             </p>
-            <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight">{{ currentDate }}</span></p>
+            <p style="color: #ffffff; font-weight: bold;">
+                有意向赶快联系我吧</p><p><span style="color: #ff4500; font-weight: bold;">一单一结，不拖单压单 既做既结</span>
+            </p>
+            <p style="color: #ffffff; font-weight: bold;">最新确认时间：<span id="currentDate" style="color: red;">{{ currentDate }}</span></p>
         </div>
     </div>
     </div>
@@ -219,7 +215,7 @@ a:hover {
     .assiw-container {
         padding: 6px; /* 在小屏幕上减少内边距 */
         width: 94%;
-        height: 90%;
+        height: 87%;
     }
 
     h2 {
