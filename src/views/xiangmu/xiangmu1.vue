@@ -25,22 +25,39 @@
         </div>
         
         <!-- 修改部分，使用 JSON 数据填充 -->
-        <h3 class="sub-title">🔥线报类🔥</h3> <!-- 子标题 -->
+        <h3 class="sub-title">🔥最新线报类🔥</h3> <!-- 子标题 -->
         
         <div class="link-all" v-if="xianbaoLinks.length > 0">
-  <div
-    class="item"
-    v-for="news in xianbaoLinks"
-    :key="news.id"
-    @click="news.link ? loadComponent(news.link) : openLink(news.url)"
-  >
-    <span class="name">{{ news.title }}</span>
-    <div class="description">{{ news.content }}</div>
-    <div class="datetime">{{ news.datetime }}</div>
-  </div>
-</div>
+          <div
+            class="item"
+            v-for="news in xianbaoLinks"
+            :key="news.id"
+            @click="news.link ? loadComponent(news.link) : openLink(news.url)"
+            :title="`${news.title}\n${news.content}`"
+          >
+            <span class="name">{{ news.title.slice(0, 20) }}</span>
+            <!-- <div class="description">{{ news.content }}</div> -->
+            <div class="datetime">{{ news.datetime }}</div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">🔥猜你喜欢🔥</h3> <!-- 子标题 -->
+        
+        <div class="link-all" v-if="xianbaoLinkss.length > 0">
+          <div
+            class="item"
+            v-for="news in xianbaoLinkss"
+            :key="news.id"
+            @click="news.link ? loadComponent(news.link) : openLink(news.url)"
+            :title="`${news.title}\n${news.content}`"
+          >
+            <span class="name">{{ news.title.slice(0, 20) }}</span>
+            <!-- <div class="description">{{ news.content }}</div> -->
+            <div class="datetime">{{ news.datetime }}</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div>  
   </div>  
   <component :is="currentComponent" v-if="currentComponent" @close="show" />
 </template>
@@ -48,6 +65,8 @@
 <script setup>
 import { ref, defineEmits, defineExpose, onMounted } from 'vue';
 import axios from 'axios';
+
+
 
 import daifa from '@/views/xmzujian/daifa.vue'; // 新增导入
 import douyin from '@/views/xmzujian/douyin.vue'; // 新增导入
@@ -60,6 +79,7 @@ const emit = defineEmits(['close']);
 const isVisible = ref(true);
 const currentComponent = ref(null);
 const xianbaoLinks = ref([]);
+const xianbaoLinkss = ref([]);
 
 const close = () => {
   isVisible.value = false;
@@ -146,15 +166,33 @@ const loadComponent = (link) => {
 // 使用 onMounted 来获取 JSON 数据
 onMounted(() => {
   axios.get('/api/plus/json/push.json')
-  .then(response => {
-    console.log('获取的数据：', response.data);
-    xianbaoLinks.value = response.data.map(item => ({
-      id: item.id,
-      title: item.title,
-      content: item.content,
-      datetime: item.datetime,
-      url: 'http://new.ixbk.net' + item.url,
-      link: item.link,
+    .then(response => {
+      console.log('获取的数据：', response.data);
+      xianbaoLinks.value = response.data.map(item => ({
+        id: item.id,
+        title: item.title,
+        content: item.content,
+        datetime: item.datetime,
+        url: 'http://new.ixbk.net' + item.url,
+        link: item.link,
+      }));
+    })
+    .catch(error => {
+      console.error('获取线报数据失败:', error);
+    });
+});
+
+onMounted(() => {
+  axios.get('/api/plus/json/rank/guesslike.json')
+    .then(response => {
+      console.log('获取的数据：', response.data);
+      xianbaoLinkss.value = response.data.map(item => ({
+        id: item.id,
+        title: item.title,
+        content: item.content,
+        datetime: item.datetime,
+        url: 'http://new.ixbk.net' + item.url,
+        link: item.link,
       }));
     })
     .catch(error => {
@@ -185,7 +223,7 @@ const handleButtonClick = () => {
 .yellow-text {
   color: rgb(255, 64, 0);
   font-weight: bold; // 加粗
-  font-size: 1.2em; // 字体放大1.3倍
+  font-size: 1.1em; // 字体放大1.3倍
 }
 
 .overlay {
@@ -199,6 +237,10 @@ const handleButtonClick = () => {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+.datetime {
+  color: red; // 红色字体
 }
 
 .set {
@@ -317,6 +359,7 @@ const handleButtonClick = () => {
   margin-top: 20px;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 }
 
 .link-all {
@@ -354,7 +397,7 @@ const handleButtonClick = () => {
   }
 
   .name {
-    font-size: 1.1rem; /* 名称字体大小 */
+    font-size: 1rem; /* 名称字体大小 */
     margin-top: 0px; /* 名称上边距 */
     text-align: center; /* 名称居中对齐 */
   }
@@ -365,7 +408,6 @@ const handleButtonClick = () => {
     text-align: center; /* 介绍居中对齐 */
     color: #ff0000; /* 介绍文字颜色 */
   }
-
 }
 
 .top-title {
@@ -381,10 +423,19 @@ const handleButtonClick = () => {
   font-size: 1.2rem; /* 字体大小 */
   margin: 5px; /* 上下间距 */
 }
+
 @media only screen and (max-width: 768px) {
   .sub-title {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .item {
+    width: 48%; /* 当手机访问时宽度为百分之48 */
+    padding: 5px;
+    font-size: 0.9em; /* 定义 title 大小为4em */
+  }
+  .name {
+    font-size: 0.5em;
   }
 }
 </style>

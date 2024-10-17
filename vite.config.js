@@ -7,12 +7,10 @@ import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import viteCompression from "vite-plugin-compression";
-import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default ({ mode }) =>
   defineConfig({
-
     plugins: [
       vue(),
       AutoImport({
@@ -77,10 +75,6 @@ export default ({ mode }) =>
       }),
       viteCompression(),
     ],
-    server: {
-      port: "3000",
-      open: true,
-    },
     resolve: {
       alias: [
         {
@@ -105,8 +99,10 @@ export default ({ mode }) =>
         },
       },
     },
-
+    // 合并后的 server 配置
     server: {
+      port: "3000",
+      open: true,
       proxy: {
         '/api': {
           target: 'http://new.ixbk.net',
@@ -116,4 +112,3 @@ export default ({ mode }) =>
       },
     },
   });
-  
