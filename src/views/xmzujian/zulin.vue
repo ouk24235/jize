@@ -13,55 +13,49 @@
 
         <div class="assiw-container">
             <h2 style="color: #ff4500; font-weight: bold;">🔥租赁项目🔥</h2>
-            <p style="color: #ADFF2F; font-weight: bold;">🔥 只需两步（下载APP+免押租赁指定商品）</p>
+            <p style="color: #ADFF2F; font-weight: bold;">🔥 下载APP+免押租赁指定商品</p>
             <p style="color: #ADFF2F; font-weight: bold;">🔥 无需垫付及预支资金</p>
             <p style="color: #ADFF2F; font-weight: bold;">🔥 每单只需要5-15分钟，佣金200+</p>
             <p style="color: #ADFF2F; font-weight: bold;">🔥 在家有一部手机就能做</p>
             <p style="color: #ADFF2F; font-weight: bold;">🔥 有意向联系请底部QQ</p>
 
-            <h3 style="color: #ffcc00;">❓ 我们如何获利？</h3>
+            <h3 class="h3222" style="color: #ffcc00;">❓ 我们如何获利？</h3>
             <ul>
                 <li style="color: #ffffff;">根据商家做店铺运营店铺需要信誉分考核需求，刷三类数据：</li>
                 <li class="highlight" style="font-weight: bold;">店铺订单数</li>
                 <li class="highlight" style="font-weight: bold;">店铺订单质量</li>
                 <li class="highlight" style="font-weight: bold;">店铺好评率</li>
             </ul>
-
-            <h3 style="color: #ffcc00; font-weight: bold;">💵 如何获得佣金</h3>
+            <details>
+            <summary class="h3222" style="color: #ffcc00; font-weight: bold;">💵 如何获得佣金</summary>
             <ul>
+                <li>为确保顺利参与，您的芝麻分需在<span style="color: #00ff00; font-weight: bold;">600分</span>以上；若低于<span style="color: #00ff00; font-weight: bold;">600分</span>，则无法进行操作流程。</li>
+                <li>下载APP并自行<span style="color: #00ff00; font-weight: bold;">注册登入</span>。</li>
                 <li>我们在<span style="color: #00ff00; font-weight: bold;">合作店铺以及自营店铺</span>上架商品。</li>
                 <li>做单人员选择<span style="color: #00ff00; font-weight: bold;">指定商品进行租赁。</span></li>
                 <li>提供<span style="color: #00ff00; font-weight: bold;">订单截图给负责人以结算佣金。</span></li>
                 <li>具体<span style="color: #00ff00; font-weight: bold;">操作流程请联系下方客服获取。</span></li>
             </ul>
-
-            <h3 style="color: #ffcc00; font-weight: bold;">💡 用户如何操作</h3>
+        </details>
+            <details>
+            <summary class="h3222" style="color: #ffcc00; font-weight: bold;">🧧 佣金结算模式</summary>
             <ul>
-                <li>为确保顺利参与，您的芝麻分需在<span style="color: #00ff00; font-weight: bold;">600分</span>以上；若低于<span style="color: #00ff00; font-weight: bold;">600分</span>，则无法进行操作流程。</li>
-                <li>下载APP并自行<span style="color: #00ff00; font-weight: bold;">注册登入</span>。</li>
-                <li>选择客服<span style="color: #00ff00; font-weight: bold;">指定商品租赁</span></li>
-                <li>用户成功租赁后<span style="color: #00ff00; font-weight: bold;">保存订单截图</span></li>
-                <li>将保存的<span style="color: #00ff00; font-weight: bold;">订单截图发送给客服结账</span></li>
-                <li>平均一单<span style="color: #00ff00; font-weight: bold;">5-20分钟</span>可以做完。</li>
-            </ul>
-
-            <h3 style="color: #ffcc00; font-weight: bold;">🧧 佣金结算模式</h3>
-            <ul>
-                <li>用户：<span style="color: #20B2AA; font-weight: bold;">提供成功租赁订单的截图</span>给上级，把<span style="color: #20B2AA; font-weight: bold;">收款方式</span>和<span style="color: #20B2AA; font-weight: bold;">订单截图</span>发给上级</li>
-                <li>上级会现场结算，请<span style="color: #20B2AA; font-weight: bold;">提供自己的收款方式，防止诈骗人员。</span></li>
+                <li>用户：<span style="color: #20B2AA; font-weight: bold;">提供成功租赁订单的截图</span>，<span style="color: #20B2AA; font-weight: bold;">和收款方式</span>发给上级</li>
+                <li>请<span style="color: #20B2AA; font-weight: bold;">提供自己的收款方式，预防电信诈骗人员。</span></li>
                 <li><span style="color: #ffcc00; font-weight: bold;">结账支持：</span><span style="color: #00ff00; font-weight: bold;">支付宝，微信，口令或者扫码。</span></li>
-                <li><span style="color: #20B2AA; font-weight: bold;">成功收到打款前后请保持联系方式通畅</span>，避免找不到人，浪费我们的时间。</li>
+                <li><span style="color: #20B2AA; font-weight: bold;">成功收到打款前后请保持联系方式通畅</span>，避免找不到人，浪费时间。</li>
             </ul>
-
-            <h3 style="color: #ffcc00; font-weight: bold;">👨‍👨‍👦‍👦 面向客户群体</h3>
+        </details>
+        <details>
+            <summary class="h3222" style="color: #ffcc00; font-weight: bold;">👨‍👨‍👦‍👦 面向客户群体</summary>
             <ul>
                 <li style="color: #20B2AA; font-weight: bold;">目前我们优先接受信用良好的用户订单，以确保合作顺利进行。</li>
                 <li style="color: #20B2AA; font-weight: bold;">客户年龄区间在18-60之间，能熟练操作手机的。</li>
                 <li style="color: #20B2AA; font-weight: bold;">杜绝涉黑涉恶人员，防止卷款跑路。</li>
                 <li style="color: #20B2AA; font-weight: bold;">请未成年人不要参与网络活动</li>
             </ul>
-
-            <h3 style="color: #ffcc00; font-weight: bold;">👦‍联系我们</h3>
+        </details>
+            <h3 class="h3222" style="color: #ffcc00; font-weight: bold;">👦‍联系我们</h3>
             <p style="color: #00ff00; font-weight: bold;">
                 目前正在紧急招募代理，名额有限，请尽快联系
             </p>
@@ -72,17 +66,35 @@
             <p style="color: #ffffff; font-weight: bold;">
                 有意向赶快联系我吧</p><p><span style="color: #ff4500; font-weight: bold;">一单一结，不拖单压单 既做既结</span>
             </p>
-            <h2 style="color: #FDE401;">常见问题（做单必看）</h2>
-          <li><span style="color: #55D32D;"> 问</span>：没有Steam账号，怎么办。</li>
-          <li>答：商家会提供账号，请联系客服</li>
-          <li><span style="color: #55D32D;"> 问</span>：担心归还不上怎么办？</li>
-          <li>答：打开APP—租赁记录—归还—确认即可。</li>
-          <li><span style="color: #55D32D;"> 问</span>：会不会对芝麻分有影响。</li>
-          <li>答：不会，正常归还</li>
-          <li><span style="color: #55D32D;"> 问</span>：这个会有什么风险吗？</li>
-          <li>答：没有风险</li>
-          <li><span style="color: #55D32D;"> 问</span>：租完后什么时候归还呢。</li>
-          <li>答：订单到期时即可归还</li>
+            <h3 style="color: #FDE401;">常见问题（做单必看）点击展开回答</h3>
+            <details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：你们通过什么盈利？</summary>
+  <p>答：通过养店铺评分，出售店铺来变现。</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：没有Steam账号，怎么办？</summary>
+  <p>答：商家会提供账号，联系客服可以免费领取</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：为什么会要要求芝麻分？</summary>
+  <p>答：租赁商品需要交押金，如果芝麻分没600分需要支付押金，那就不是0成本租单了</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：如何归还租的商品？</summary>
+  <p>答：打开APP—租赁记录—归还—确认即可。</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：租完后什么时候归还呢？</summary>
+  <p>答：订单到期时在APP内确认，系统自动审批</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：为什么佣金有这么高？</summary>
+  <p>答：因为涉及到芝麻分，所以筛选了很大一部分人群，其次算是福利活动吧，冷门赛道，做的人少，后期可能考虑降低佣金</p>
+</details>
+<details class="faq-item">
+  <summary><span style="color: #55D32D;"> 问</span>：租赁的商品我在哪里查看？</summary>
+  <p>答：成功租赁后在你的悠悠有品账户中管理租赁的商品</p>
+</details>
             <p style="color: #ffffff; font-weight: bold;">最新确认时间：<span id="currentDate" style="color: red;">{{ currentDate }}</span></p>
         </div>
     </div>
@@ -142,7 +154,42 @@ defineExpose({ show });
 <style scoped>
 /* 全局应用 box-sizing: border-box */
 
+.faq-item {
 
+  transition: all 1s ease-in-out;
+
+  overflow: hidden;
+}
+
+.faq-item[open] summary {
+
+  font-weight: bold;
+}
+
+.faq-item summary {
+
+  cursor: pointer;
+
+
+
+  margin-bottom: 5px;
+}
+
+.faq-item p {
+
+  margin: 0;
+
+  padding: 0 0 10px 20px;
+
+  transition: opacity 1s ease-in-out;
+
+  opacity: 0;
+}
+
+.faq-item[open] p {
+
+  opacity: 1;
+}
 /* 重置默认的 margin 和 padding */
 body, h1, h2, h3, p, ul, li, a, span {
     margin: 0;
@@ -160,6 +207,40 @@ body {
     align-items: center; /* 水平居中对齐 */
     background-color: transparent;
     overflow: hidden; /* 隐藏 body 的滚动条 */
+}
+
+.h3222{
+font-size: 1.3em;
+transition: all 1s ease-in-out;
+
+overflow: hidden;
+
+}
+.h3222[open] summary {
+
+font-weight: bold;
+}
+.h3222 summary {
+
+cursor: pointer;
+
+
+
+margin-bottom: 5px;
+}
+.h3222 p {
+
+margin: 0;
+
+padding: 0 0 10px 20px;
+
+transition: opacity 1s ease-in-out;
+
+opacity: 0;
+}
+.h3222[open] p {
+
+opacity: 1;
 }
 
 .assiw-container {
@@ -226,7 +307,7 @@ a:hover {
     .assiw-container {
         padding: 6px; /* 在小屏幕上减少内边距 */
         width: 94%;
-        height: 87%;
+        height: 95vh;
     }
 
     h2 {
