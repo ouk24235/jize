@@ -27,7 +27,7 @@
         <!-- 修改部分，使用 JSON 数据填充 -->
         <h3 class="sub-title">🔥线报类🔥</h3> <!-- 子标题 -->
         
-        <div class="link-all">
+        <div class="link-all" v-if="xianbaoLinks.length > 0">
   <div
     class="item"
     v-for="news in xianbaoLinks"
@@ -145,16 +145,16 @@ const loadComponent = (link) => {
 
 // 使用 onMounted 来获取 JSON 数据
 onMounted(() => {
-  axios.get('http://new.ixbk.net/plus/json/push.json')
-    .then(response => {
-      console.log('获取的数据：', response.data); // 添加这行
-      xianbaoLinks.value = response.data.map(item => ({
-        id: item.id,
-        title: item.title,
-        content: item.content,
-        datetime: item.datetime,
-        url: 'http://new.ixbk.net' + item.url,
-        link: item.link
+  axios.get('/api/plus/json/push.json')
+  .then(response => {
+    console.log('获取的数据：', response.data);
+    xianbaoLinks.value = response.data.map(item => ({
+      id: item.id,
+      title: item.title,
+      content: item.content,
+      datetime: item.datetime,
+      url: 'http://new.ixbk.net' + item.url,
+      link: item.link,
       }));
     })
     .catch(error => {
