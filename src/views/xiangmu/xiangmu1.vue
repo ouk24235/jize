@@ -14,7 +14,7 @@
         <h2 class="top-title">🔥项目列表🔥</h2> <!-- 置顶标题 -->
         
         <!-- 新增子标题 -->
-        <h3 class="sub-title">🔥做单类🔥</h3> <!-- 子标题 -->
+        <h3 class="sub-title">🔥兼职做单拿佣金🔥</h3> <!-- 子标题 -->
         
         <div class="link-all">
           <div class="item" v-for="link in xinxiLinks" :key="link.name" @click="loadComponent(link.link)">
@@ -25,7 +25,7 @@
         </div>
         
         <!-- 修改部分，使用 JSON 数据填充 -->
-        <h3 class="sub-title">🔥最新线报类🔥</h3> <!-- 子标题 -->
+        <h3 class="sub-title">🔥最新线报福利🔥</h3> <!-- 子标题 -->
         
         <div class="link-all" v-if="xianbaoLinks.length > 0">
           <div
@@ -71,7 +71,7 @@ import axios from 'axios';
 import daifa from '@/views/xmzujian/daifa.vue'; // 新增导入
 import douyin from '@/views/xmzujian/douyin.vue'; // 新增导入
 import qqkuolie from '@/views/xmzujian/qqkuolie.vue'; // 新增导入
-import usdt from '@/views/xmzujian/usdt.vue'; // 新增导入
+//import usdt from '@/views/xmzujian/usdt.vue'; // 新增导入
 import zulin from '@/views/xmzujian/zulin.vue'; // 新增导入
 import vxzhuc from '@/views/xmzujian/vxzhuc.vue'; // 新增导入
 
@@ -121,12 +121,12 @@ const xinxiLinks = ref([
     link: "qqkuolie", // 新增链接
     description: "1个人1-5块" // 新增介绍
   },
-  {
+ /* {
     name: "USDT兑换",
     icon: "i-icon-new", // 假设有一个新的图标类
     link: "usdt", // 新增链接
     description: "（利润较高 但门槛高 且需要本金）" // 新增介绍
-  },
+  },*/
   {
     name: "微信辅助注册",
     icon: "i-icon-new", // 假设有一个新的图标类
@@ -215,13 +215,13 @@ const handleButtonClick = () => {
 <style lang="scss" scoped>
 
 .red-text {
-  color: rgba(255, 0, 0, 0.562);
-  font-weight: bold; // 加粗
+  color: rgb(255, 255, 255);
+
   font-size: 1.1em; // 字体放大1.3倍
 }
 
 .yellow-text {
-  color: rgb(255, 64, 0);
+  color: rgb(0, 255, 21);
   font-weight: bold; // 加粗
   font-size: 1.1em; // 字体放大1.3倍
 }
@@ -245,7 +245,7 @@ const handleButtonClick = () => {
 
 .set {
   position: relative;
-  width: 55%;
+  width: 80%;
   height: 80%;
   background: rgba(255, 255, 255, 0.0); /* 半透明背景 */
   backdrop-filter: blur(10px); /* 模糊效果 */
@@ -363,16 +363,17 @@ const handleButtonClick = () => {
 }
 
 .link-all {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px; /* 增加顶部间距 */
+  display: flex; /* 使用flex布局 */
+  flex-wrap: wrap; /* 自动换行 */
+  justify-content: center; /* 水平居中 */
+  gap: 10px; /* 项目之间的间距 */
+  margin-top: 10px; /* 增加顶部间距 */
+  text-align: left; /* 左对齐 */
 }
 
 .item {
   height: 100px; /* 项目高度 */
-  width: 266px; /* 项目宽度 */
+  width: 250px; /* 项目宽度 */
   display: flex; /* 使用flex布局 */
   align-items: center; /* 垂直居中 */
   flex-direction: column; /* 垂直方向排列 */
@@ -406,7 +407,7 @@ const handleButtonClick = () => {
     font-size: 0.9rem; /* 介绍字体大小 */
     margin-top: 5px; /* 介绍上边距 */
     text-align: center; /* 介绍居中对齐 */
-    color: #ff0000; /* 介绍文字颜色 */
+    color: #ffffff; /* 介绍文字颜色 */
   }
 }
 
