@@ -34,7 +34,7 @@
       <h3 style="color: #ffcc00;">👦‍联系我们</h3>
       <p style="color: #ffffff;">该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank" style="color: #00bfff;">@Assiw8（点击跳转）</a></p>
       <p style="color: #ffffff;">
-        负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="openQQChat">3851456810</span>
+        负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="openQQChat">1393513630</span>
       </p>
       <p style="color: #ffffff;">备用QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber">924160568</span></p>
       <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight"></span></p>
@@ -47,7 +47,7 @@ export default {
   name: 'qqun',
   methods: {
     openQQChat() {
-      window.location.href = "mqq://im/chat?chat_type=wpa&uin=3851456810"; // 通过此链接打开与指定QQ的聊天
+      window.location.href = "mqq://im/chat?chat_type=wpa&uin=1393513630"; // 通过此链接打开与指定QQ的聊天
     },
     updateCurrentDate() {
       const currentDate = new Date();
@@ -58,7 +58,7 @@ export default {
   mounted() {
     this.updateCurrentDate();
     document.getElementById('qqNumber').addEventListener('click', () => {
-      const qqNumber = '3851456810';
+      const qqNumber = '1393513630';
       navigator.clipboard.writeText(qqNumber).catch(err => {
         console.error('无法复制文本: ', err);
       });

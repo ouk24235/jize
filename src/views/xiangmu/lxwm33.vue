@@ -9,19 +9,50 @@
         </svg>
       </span>
 
-      <div class="iframe-container">
-        <iframe
-          :src="iframeSrc"
-          frameborder="0"
-          width="100%"
-          height="100%"
-          allowfullscreen
-        ></iframe>
+      <div>
+        <div class="content">
+      <h2>联系客服</h2>
+
+
+      <h3 style="color: #ffcc00;">‍联系方式</h3>
+            
+            <p style="color: #ffffff;">
+                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('1393513630')">1393513630（手机用户点我复制并打开QQ）</span>
+            </p>
+            <p>目前正在紧急招募代理，名额有限，请尽快联系</p>
+            <p>添加请备注来意，如项目名称 ，或咨询的问题</p>
+            <p>所有项目都是一单一结，不压单拖单，既做既结</p>
+            <p style="color: #ffffff;">最新确认时间：<span id="currentDate" class="highlight">{{ currentDate }}</span></p>
+    </div>
       </div>
     </div>
   </div>
 </template>
-
+<script>
+export default {
+    data() {
+        return {
+            currentDate: ''
+        };
+    },
+    methods: {
+        copyQQ(qqNumber) {
+            navigator.clipboard.writeText(qqNumber).then(() => {
+                // QQ号码已成功复制到剪贴板
+            }).catch(err => {
+                console.error('无法复制文本: ', err);
+            });
+        },
+        updateCurrentDate() {
+            const currentDate = new Date();
+            this.currentDate = `${currentDate.getFullYear()}年${currentDate.getMonth() + 1}月${currentDate.getDate()}日`;
+        }
+    },
+    mounted() {
+        this.updateCurrentDate();
+    }
+};
+</script>
 <script setup>
 import { ref, defineEmits, defineExpose } from 'vue';
 
@@ -48,7 +79,32 @@ const show = () => {
 // 公开 show 方法用于外部调用
 defineExpose({ show });
 </script>
-
+<style scoped>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: transparent; /* 移除背景颜色 */
+}
+.content {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0); /* 黑色背景，透明度40% */
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: #ff4500;
+}
+p {
+    margin: 10px 0;
+}
+.contact {
+    color: #ff4500;
+    cursor: pointer;
+}
+</style>
 <style lang="scss" scoped>
 .overlay {
   position: fixed;
@@ -62,6 +118,8 @@ defineExpose({ show });
   align-items: center;
   z-index: 1000;
 }
+
+
 
 .set {
   position: relative;

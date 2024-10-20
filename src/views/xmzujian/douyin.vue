@@ -24,7 +24,7 @@
       <h3 style="color: #ffcc00;">👦‍联系我们</h3>
             
             <p style="color: #ffffff;">
-                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
+                负责人QQ；<span style="color: #ff4500; cursor: pointer;" id="qqNumber" @click="copyQQ('1393513630')">1393513630（手机用户点我复制并打开QQ）</span>
             </p>
             <p style="color: #ffffff;">
                 有意向赶快联系我吧<span style="color: #ff4500;">一单一结，不拖单压单 既做既结</span>

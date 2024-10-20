@@ -8,7 +8,7 @@
                 <p>Telegram:<a href="https://t.me/Assiw8" target="_blank" style="color: #d9534f;">@Assiw8（点击跳转）</a></p>
                 <p>Telegram群:<a href="https://t.me/Assiw666" target="_blank" style="color: #d9534f;">@Assiw666（点击跳转）</a></p>
                 <p>负责人👇
-                    <li>QQ：<span class="qq" @click="copyToClipboard('3851456810')">3851456810 </span></li>
+                    <li>QQ：<span class="qq" @click="copyToClipboard('1393513630')">1393513630 </span></li>
                     <li>备用QQ：<span class="qq" @click="copyToClipboard('924160568')">924160568</span></li>
                     <li>微信：<span class="weixin" @click="copyToClipboard('L_cooool')">L_cooool （点击复制）</span></li>
                 </p>

@@ -21,7 +21,7 @@
           <li>(邀请朋友做单、一个人6.18)</li>
         <h3>👦‍联系我们</h3>
         <p>该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank">@Assiw8（点击跳转）</a></p>
-        <p>大号被冻结加这个QQ；<span @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 （点击复制）</span></p>
+        <p>大号被冻结加这个QQ；<span @click="copyQQ('1393513630')" style="color: #ff4500;">1393513630 （点击复制）</span></p>
         <p >有意向请赶快联系我吧，<a style="color: red;">一单一结，不压单拖单，即做即结</a></p>
         <p>最新确认时间：<span style="color: red;">{{ new Date().getFullYear() }}年{{ new Date().getMonth() + 1 }}月{{ new Date().getDate() }}日</span></p>
         <p>© 2020-2024 兼职赚米活动介绍. All Rights Reserved.</p>

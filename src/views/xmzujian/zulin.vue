@@ -52,7 +52,7 @@
             </p>
             <p>
                 负责人QQ；</p>
-                <p><span style="color: #00ff00; cursor: pointer; font-weight: bold;" id="qqNumber" @click="copyQQ('3851456810')">3851456810（手机用户点我复制并打开QQ）</span>
+                <p><span style="color: #00ff00; cursor: pointer; font-weight: bold;" id="qqNumber" @click="copyQQ('1393513630')">1393513630（手机用户点我复制并打开QQ）</span>
             </p>
             <p style="color: #ffffff; ">
                 有意向赶快联系我吧</p><p><span style="color: #00ff00;">一单一结，不拖单压单 既做既结</span>

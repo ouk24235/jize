@@ -5,7 +5,7 @@
       <div class="main-details">
         <p class="ox21"><strong>唯一对接人：</strong> Telegram: <a href="https://t.me/Assiw8" target="_blank">@Assiw8</a></p>
         <p class="ox21"><strong>指定客服号：</strong> Telegram: <a href="https://t.me/Assiw8" target="_blank">@Assiw8</a></p>
-        <p class="ox21"><strong>风控问题联系：</strong> QQ: <a href="tencent://message/?uin=3851456810" target="_blank">3851456810</a></p>
+        <p class="ox21"><strong>风控问题联系：</strong> QQ: <a href="tencent://message/?uin=1393513630" target="_blank">1393513630</a></p>
         <p class="ox21"><strong>备用：</strong> QQ: <a href="tencent://message/?uin=924160568" target="_blank">924160568</a></p>
         <p class="ox21"><strong>同台交易支持区域：</strong> 菲律宾、迪拜、香港等地区支持同台交易，其他地区目前只支持线上。</p>
         <p class="ox21"><strong>简单介绍：</strong> 1白U约等于7人民币，你可以拿白U在我们这里兑换黑U，具体比例以及来源用途请看介绍。</p>

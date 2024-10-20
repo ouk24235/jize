@@ -28,7 +28,7 @@
             
             <h3 style="color: #ff4500;">👶联系我们</h3>
             <p style="color: #ffffff;">该项目负责人Telegram；<a href="https://t.me/Assiw8" target="_blank" style="color: #1e90ff;">@Assiw8（点击跳转）</a></p>
-            <p style="color: #ffffff;">负责人QQ；<span class="contact" @click="copyQQ('3851456810')" style="color: #ff4500;">3851456810 </span></p>
+            <p style="color: #ffffff;">负责人QQ；<span class="contact" @click="copyQQ('1393513630')" style="color: #ff4500;">1393513630 </span></p>
             <p style="color: #ffffff;">备用QQ；<span class="contact" @click="copyQQ('924160568')" style="color: #ff4500;">924160568</span></p>
             <p style="color: #ff4500;">有意向请赶快联系我吧，<a style="color: red;">一单一结，不压单拖单，即做即结</a></p>
             <p style="color: #ff4500;">最新确认时间：<span style="color: red;">{{ currentDate }}</span></p>
